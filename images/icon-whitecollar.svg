@@ -1,0 +1,6 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="10" fill="#153B3A"/>
+  <!-- Defense Federal Shield with Star -->
+  <path d="M24 10L36 15V24C36 31 31 36 24 38C17 36 12 31 12 24V15L24 10Z" stroke="#BD967E" stroke-width="2"/>
+  <polygon points="24,17 26,22 31,22 27,25 29,30 24,27 19,30 21,25 17,22 22,22" fill="#BD967E"/>
+</svg>

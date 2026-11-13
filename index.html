@@ -11,17 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Favicon Emblem -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=1.0">
+  <link rel="stylesheet" href="styles.css?v=2.9">
 </head>
 <body>
 
-  <!-- ==========================================================================
-       TOP JURISDICTION & EMERGENCY INTAKE BAR
-       ========================================================================== -->
+  <!-- Top Emergency & Jurisdiction Ribbon -->
   <aside class="top-bar">
     <div class="container top-bar-inner">
       <div class="top-bar-left">
@@ -44,52 +39,59 @@
     </div>
   </aside>
 
-  <!-- ==========================================================================
-       MAIN NAVIGATION BAR
-       ========================================================================== -->
+  <!-- Sticky Navbar (Overlap-Free) -->
   <header class="navbar">
     <div class="container nav-inner">
-      <!-- Bespoke Logo & Brand Name -->
-      <a href="#" class="brand-block">
-        <img src="logo.svg" alt="Atlantic Trial Attorneys Crest" class="brand-emblem" width="46" height="46">
+      <a href="index.html" class="brand-block">
+        <img src="logo.svg" alt="Atlantic Trial Attorneys Crest" class="brand-emblem" width="44" height="44">
         <div class="brand-text">
           <span class="brand-name">Atlantic Trial Attorneys</span>
           <span class="brand-subtitle">Catastrophic Trial & Appellate Counsel</span>
         </div>
       </a>
 
-      <!-- Navigation Links -->
       <nav>
         <ul class="nav-links">
-          <li><a href="#advantage" class="nav-link">Trial Advantage</a></li>
-          <li><a href="#practices" class="nav-link">Practice Areas</a></li>
-          <li><a href="#results" class="nav-link">Landmark Verdicts</a></li>
-          <li><a href="#attorneys" class="nav-link">Senior Counsel</a></li>
-          <li><a href="#fees" class="nav-link">Fee Transparency</a></li>
-          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="practices.html" class="nav-link">Practices</a></li>
+          <li><a href="verdicts.html" class="nav-link">Verdicts</a></li>
+          <li><a href="attorneys.html" class="nav-link">Our Counsel</a></li>
+          <li><a href="fees.html" class="nav-link">Fee Policy</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- Action Button -->
       <div class="nav-actions">
-        <button class="btn btn-primary" onclick="scrollToEvaluation()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <a href="contact.html" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Case Evaluation
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
+
+    <!-- Mobile Off-Canvas Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="practices.html">Practice Areas</a></li>
+        <li><a href="verdicts.html">Landmark Verdicts ($680M+)</a></li>
+        <li><a href="attorneys.html">Senior Trial Partners</a></li>
+        <li><a href="fees.html">Fee Transparency Policy</a></li>
+        <li><a href="contact.html">Contact & Case Evaluation</a></li>
+      </ul>
+    </div>
   </header>
 
-  <!-- ==========================================================================
-       HERO SECTION — Prestige Courtroom Authority
-       ========================================================================== -->
+  <!-- Hero Section -->
   <section class="hero-section">
     <div class="container hero-grid">
-      <!-- Left Hero Column -->
       <div>
         <div class="hero-pill">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <span>Nationally Recognized Trial Advocates • AV Preeminent® Rated</span>
+          <span>Nationally Recognized Trial Advocates • AV Preeminent® 5.0/5.0</span>
         </div>
 
         <h1 class="hero-title">
@@ -98,14 +100,14 @@
         </h1>
 
         <p class="hero-subhead">
-          When catastrophic disasters, commercial betrayal, or landmark federal appeals demand relentless courtroom mastery, Fortune 500 executives, referring trial counsel, and families nationwide turn to Atlantic Trial Attorneys.
+          When catastrophic air disasters, commercial betrayal, or landmark federal appeals demand relentless courtroom mastery, Fortune 500 executives, referring trial counsel, and families nationwide turn to Atlantic Trial Attorneys.
         </p>
 
         <div class="hero-cta-row">
-          <button class="btn btn-primary" onclick="scrollToEvaluation()">
+          <a href="contact.html" class="btn btn-primary">
             Request Confidential Partner Review
-          </button>
-          <a href="#results" class="btn btn-outline-light">
+          </a>
+          <a href="verdicts.html" class="btn btn-outline-light">
             Explore $680M+ Verdicts
           </a>
         </div>
@@ -113,24 +115,24 @@
         <div class="hero-trust-bar">
           <div class="hero-trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>No Junior Delegation</span>
+            <span>Zero Junior Delegation</span>
           </div>
           <div class="hero-trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Contingency & Flat Fees Available</span>
+            <span>100% Risk-Free Contingency</span>
           </div>
           <div class="hero-trust-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Immediate Conflict Assessment</span>
+            <span>Direct Partner Access</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Hero Column: Direct Partner Callback Intake Card -->
+      <!-- Hero Right: Direct Partner Callback Intake Card -->
       <div class="hero-intake-card">
         <div class="card-header-badge">
           <span class="card-badge-title">Direct Partner Callback</span>
-          <span class="partner-status-pill">Senior Trial Partner On-Duty</span>
+          <span class="partner-status-pill">Senior Partner On-Duty</span>
         </div>
 
         <form id="hero-quick-form">
@@ -161,16 +163,14 @@
 
           <div class="intake-privilege-note">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>100% Protected by Attorney-Client Confidentiality</span>
+            <span>100% Protected by Attorney-Client Privilege</span>
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       CREDIBILITY NUMBERS & ACCREDITATIONS TICKER
-       ========================================================================== -->
+  <!-- Credibility & Accreditations Ticker -->
   <section class="credibility-strip">
     <div class="container">
       <div class="credibility-grid">
@@ -207,927 +207,769 @@
         </div>
         <div class="accreditation-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <span>American College of Trial Lawyers Fellows</span>
+          <span>American College of Trial Lawyers</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       THE ATLANTIC TRIAL ADVANTAGE: WHY CLIENTS RETAIN US
-       ========================================================================== -->
-  <section class="advantage-section" id="advantage">
+  <!-- Showcase Box with High-End Illustration -->
+  <section class="section-padding">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">The Atlantic Trial Difference</span>
-        <h2 class="section-title">We Don't Posture. We Try Cases.</h2>
+        <span class="section-badge">Courtroom Authority</span>
+        <h2 class="section-title">Built for the Most Demanding Legal Battles</h2>
         <p class="section-desc">
-          Most law firms settle early because taking cases to verdict carries catastrophic risk. Insurance defense conglomerates know who goes to trial and who folds. At Atlantic Trial Attorneys, our adversaries know we prepare every case for closing arguments.
+          From federal multi-district litigation to oral arguments at the U.S. Supreme Court, Atlantic Trial Attorneys brings relentless preparation, financial war-chest capital, and seasoned trial advocacy.
         </p>
       </div>
 
-      <div class="advantage-cards-grid">
-        <div class="advantage-card">
-          <div class="advantage-icon-wrapper">
+      <div class="showcase-illustration-box">
+        <img src="images/courtroom-hero.jpg" alt="United States Supreme Court & Federal Colonnade" class="showcase-img">
+        <div class="showcase-overlay-bar">
+          <span class="showcase-overlay-text">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Federal Courtroom & Supreme Court Practice Docket • Admitted Nationwide
+          </span>
+          <span class="showcase-overlay-tag">Federal Trial Authority</span>
+        </div>
+      </div>
+
+      <!-- Core Highlights 3-Card Grid -->
+      <div class="cards-grid-3">
+        <div class="feature-card">
+          <div class="card-icon-box" style="background: rgba(40, 96, 92, 0.1); color: var(--secondary);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3 class="advantage-title">Zero Junior Delegation</h3>
-          <p class="advantage-desc">
-            We reject the pyramid model of Big Law. You will never have your depositions, trial strategy, or key negotiations handed off to junior associates learning on your dime. Senior partners handle your matter from day one.
+          <h3 class="card-title">Zero Junior Delegation</h3>
+          <p class="card-desc">
+            Your high-stakes dispute is never passed down to inexperienced junior associates. Senior partners personally lead every key deposition, evidentiary hearing, and jury presentation.
           </p>
+          <a href="practices.html" class="btn btn-outline-dark" style="margin-top: auto;">Explore Disciplines</a>
         </div>
 
-        <div class="advantage-card">
-          <div class="advantage-icon-wrapper">
+        <div class="feature-card">
+          <div class="card-icon-box" style="background: rgba(189, 150, 126, 0.15); color: var(--accent);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
           </div>
-          <h3 class="advantage-title">War-Chest Trial Capital</h3>
-          <p class="advantage-desc">
-            Litigating against global airlines, Fortune 50 trucking brokers, and multinational corporations demands immense capital. We routinely front hundreds of thousands of dollars for premier accident reconstructionists, avionics experts, and biomechanical simulators.
+          <h3 class="card-title">War-Chest Trial Capital</h3>
+          <p class="card-desc">
+            We routinely commit millions of dollars in capital to fund premier accident reconstructionists, avionics telemetry engineers, and mock jury focus groups.
           </p>
+          <a href="verdicts.html" class="btn btn-outline-dark" style="margin-top: auto;">View $680M+ Verdicts</a>
         </div>
 
-        <div class="advantage-card">
-          <div class="advantage-icon-wrapper">
+        <div class="feature-card">
+          <div class="card-icon-box" style="background: rgba(40, 96, 92, 0.1); color: var(--secondary);">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <h3 class="advantage-title">Embedded Appellate Mastery</h3>
-          <p class="advantage-desc">
-            A 20-million-dollar verdict is worthless if overturned on appeal. Our embedded appellate scholars draft jury instructions, preserve crucial objections, and build the record so victories are permanently protected.
+          <h3 class="card-title">Embedded Appellate Mastery</h3>
+          <p class="card-desc">
+            An eight-figure verdict is only as secure as its record on appeal. Our embedded appellate scholars build the trial record so courtroom victories remain bulletproof.
           </p>
-        </div>
-      </div>
-
-      <!-- Side-by-Side Comparison Matrix -->
-      <div class="comparison-matrix">
-        <div class="matrix-header">
-          <div class="matrix-header-cell standard">Litigation Dimension</div>
-          <div class="matrix-header-cell standard">Mega-Firm / Volume Settlement Mills</div>
-          <div class="matrix-header-cell featured">Atlantic Trial Attorneys</div>
-        </div>
-
-        <div class="matrix-row">
-          <div class="matrix-cell feature-name">Counsel Handling Depositions & Courtroom</div>
-          <div class="matrix-cell standard">First-to-third year junior associates</div>
-          <div class="matrix-cell featured">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Senior Trial Partners with 20+ years pedigree
-          </div>
-        </div>
-
-        <div class="matrix-row">
-          <div class="matrix-cell feature-name">Trial Readiness & Willingness to Verdict</div>
-          <div class="matrix-cell standard">Settles at discount before courtroom phase</div>
-          <div class="matrix-cell featured">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Trial-ready with full mock juries & focus groups
-          </div>
-        </div>
-
-        <div class="matrix-row">
-          <div class="matrix-cell feature-name">Billing Transparency</div>
-          <div class="matrix-cell standard">Inflated billable hours & opaque retainers</div>
-          <div class="matrix-cell featured">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            100% Contingency (0$ Upfront) or Flat Phased Fees
-          </div>
-        </div>
-
-        <div class="matrix-row">
-          <div class="matrix-cell feature-name">Direct Client Access</div>
-          <div class="matrix-cell standard">Filtered through paralegals and case managers</div>
-          <div class="matrix-cell featured">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Direct mobile and calendar access to lead counsel
-          </div>
+          <a href="attorneys.html" class="btn btn-outline-dark" style="margin-top: auto;">Meet Senior Counsel</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       CORE PRACTICE SPECIALTIES
-       ========================================================================== -->
-  <section class="practices-section" id="practices">
+  <!-- [NEW] Landmark Verdicts & Settlements Showcase -->
+  <section class="section-padding" style="background: #FFFFFF; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Trial & Appellate Disciplines</span>
-        <h2 class="section-title">Focused Exclusively on High-Stakes Litigation</h2>
+        <span class="section-badge">Documented Courtroom Precedents</span>
+        <h2 class="section-title">Headline Verdicts & Judicial Precedents</h2>
         <p class="section-desc">
-          We do not dabble in routine transactional paperwork. Every practice group at Atlantic Trial Attorneys is dedicated to federal courtroom advocacy, complex disputes, and catastrophic damages.
+          More than $680 million recovered. When corporate defendants and insurance carriers know our trial record, settlement dynamics fundamentally shift.
         </p>
       </div>
 
-      <!-- Practice Area Filter Tabs -->
-      <div class="practices-filter-bar">
-        <button class="filter-btn practice-filter-btn active" data-filter="all">All Practice Disciplines</button>
-        <button class="filter-btn practice-filter-btn" data-filter="catastrophic">Catastrophic & Aviation</button>
-        <button class="filter-btn practice-filter-btn" data-filter="appellate">Appellate & Constitutional</button>
-        <button class="filter-btn practice-filter-btn" data-filter="commercial">Commercial Disputes</button>
-        <button class="filter-btn practice-filter-btn" data-filter="whitecollar">White-Collar Defense</button>
+      <div class="cards-grid-2">
+        
+        <!-- Case 1 -->
+        <div class="result-card">
+          <div class="result-amount">
+            <span>$42,500,000</span>
+            <span class="result-category-badge">Aviation Catastrophe</span>
+          </div>
+          <h3 class="result-title">International Airline Multi-District Mass Disaster</h3>
+          <p class="result-summary">
+            Represented 14 passenger families in multi-district litigation following dual-engine mechanical failure. Defeated federal preemption defense and secured landmark pre-trial settlement.
+          </p>
+          <div class="result-meta-row">
+            <span>Lead Counsel: <strong style="color: var(--primary);">Robert M. Vance, Esq.</strong></span>
+            <span style="color: var(--secondary); font-weight: 700;">Verified Federal Settlement</span>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="result-card">
+          <div class="result-amount">
+            <span>$28,200,000</span>
+            <span class="result-category-badge">Commercial Trucking</span>
+          </div>
+          <h3 class="result-title">Interstate Freight Carrier Traumatic Brain Injury Verdict</h3>
+          <p class="result-summary">
+            Secured unanimous federal jury verdict against logistics broker and carrier. Proved systemic falsification of electronic driver logs and corporate negligence.
+          </p>
+          <div class="result-meta-row">
+            <span>Lead Counsel: <strong style="color: var(--primary);">Robert M. Vance, Esq.</strong></span>
+            <span style="color: var(--secondary); font-weight: 700;">Unanimous Jury Verdict</span>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="result-card">
+          <div class="result-amount">
+            <span>$18,700,000</span>
+            <span class="result-category-badge">Commercial Arbitration</span>
+          </div>
+          <h3 class="result-title">Executive Shareholder Freeze-Out & IP Buyout Award</h3>
+          <p class="result-summary">
+            Arbitrated high-stakes technology partnership buyout involving proprietary software equity and offshore transfers. Secured 100% of claimed damages and legal fees.
+          </p>
+          <div class="result-meta-row">
+            <span>Lead Counsel: <strong style="color: var(--primary);">Marcus J. Sterling, Esq.</strong></span>
+            <span style="color: var(--secondary); font-weight: 700;">Final AAA Arbitration Award</span>
+          </div>
+        </div>
+
+        <!-- Case 4 -->
+        <div class="result-card">
+          <div class="result-amount">
+            <span>Defense Win</span>
+            <span class="result-category-badge">Federal Appellate</span>
+          </div>
+          <h3 class="result-title">SCOTUS & 11th Circuit Antitrust Injunction Reversal</h3>
+          <p class="result-summary">
+            Overturned an emergency preliminary injunction against a national medical diagnostics group, establishing landmark constitutional precedent on federal jurisdiction.
+          </p>
+          <div class="result-meta-row">
+            <span>Lead Counsel: <strong style="color: var(--primary);">Elena Rostova, Esq.</strong></span>
+            <span style="color: var(--secondary); font-weight: 700;">Appellate Mandate</span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="practices-grid">
-        <!-- 1. Aviation -->
-        <div class="practice-card" data-practice="catastrophic">
-          <span class="practice-header-badge">Aviation Catastrophe</span>
-          <h3 class="practice-title">Commercial Aviation & Mass Disaster</h3>
-          <p class="practice-desc">
-            Representing families in international air crashes, dual-engine mechanical failures, and component manufacturer liability under the Montreal Convention.
-          </p>
-          <ul class="practice-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>NTSB investigation & black-box telemetry analysis</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Multi-District Litigation (MDL) steering experience</span>
-            </li>
-          </ul>
-          <a href="javascript:void(0)" class="practice-footer-link" onclick="openPracticeModal('aviation')">
-            <span>View Trial Strategy & Protocols</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <!-- 2. Federal Appellate -->
-        <div class="practice-card" data-practice="appellate">
-          <span class="practice-header-badge">Appellate Heritage</span>
-          <h3 class="practice-title">Federal & State Appellate Advocacy</h3>
-          <p class="practice-desc">
-            Protecting multi-million dollar judgments and reversing trial court errors before the U.S. Supreme Court, Federal Circuits, and state courts of last resort.
-          </p>
-          <ul class="practice-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Authored 16 Supreme Court Certiorari Briefs</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Embedded post-trial & interlocutory appeal counsel</span>
-            </li>
-          </ul>
-          <a href="javascript:void(0)" class="practice-footer-link" onclick="openPracticeModal('appellate')">
-            <span>View Appellate Record & Scope</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <!-- 3. Catastrophic Trucking -->
-        <div class="practice-card" data-practice="catastrophic">
-          <span class="practice-header-badge">Commercial Carrier</span>
-          <h3 class="practice-title">Catastrophic Commercial Trucking</h3>
-          <p class="practice-desc">
-            Combating interstate trucking carriers, logistics brokers, and commercial insurers in catastrophic spinal cord injury, traumatic brain injury (TBI), and wrongful death.
-          </p>
-          <ul class="practice-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>FMCSA electronic logging device (ELD) spoilation audits</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Corporate broker liability & punitive damages claims</span>
-            </li>
-          </ul>
-          <a href="javascript:void(0)" class="practice-footer-link" onclick="openPracticeModal('trucking')">
-            <span>View Trucking Verdict Strategy</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <!-- 4. Commercial Disputes -->
-        <div class="practice-card" data-practice="commercial">
-          <span class="practice-header-badge">Commercial Trial</span>
-          <h3 class="practice-title">Bet-The-Company Commercial Trials</h3>
-          <p class="practice-desc">
-            Litigating high-stakes partnership dissolution, trade secret theft, executive breaches of fiduciary duty, and international contract arbitration.
-          </p>
-          <ul class="practice-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Emergency temporary restraining orders & asset freezes</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Arbitration before AAA, JAMS, and ICC tribunal panels</span>
-            </li>
-          </ul>
-          <a href="javascript:void(0)" class="practice-footer-link" onclick="openPracticeModal('commercial')">
-            <span>View Commercial Trial Scope</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <!-- 5. White-Collar Defense -->
-        <div class="practice-card" data-practice="whitecollar">
-          <span class="practice-header-badge">Federal Defense</span>
-          <h3 class="practice-title">White-Collar & Government Inquiries</h3>
-          <p class="practice-desc">
-            Defending corporate executives and healthcare institutions targeted in DOJ, SEC, CFTC, and Congressional grand jury investigations before indictment.
-          </p>
-          <ul class="practice-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Subpoena defense and internal forensic reviews</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Federal proffer negotiation & declination advocacy</span>
-            </li>
-          </ul>
-          <a href="javascript:void(0)" class="practice-footer-link" onclick="openPracticeModal('whitecollar')">
-            <span>View Defense Protocols</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <!-- 6. Maritime & Admiralty -->
-        <div class="practice-card" data-practice="catastrophic">
-          <span class="practice-header-badge">Admiralty Practice</span>
-          <h3 class="practice-title">Maritime & Offshore Industrial Catastrophe</h3>
-          <p class="practice-desc">
-            Navigating the Jones Act, General Maritime Law, and DOHSA for catastrophic offshore drilling rig explosions, commercial vessel collisions, and maritime workers.
-          </p>
-          <ul class="practice-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Jones Act vessel unseaworthiness litigation</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Specialized federal admiralty court trial practice</span>
-            </li>
-          </ul>
-          <a href="javascript:void(0)" class="practice-footer-link" onclick="openPracticeModal('maritime')">
-            <span>View Admiralty Protocol</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="verdicts.html" class="btn btn-primary" style="padding: 14px 32px;">
+          View Complete $680M+ Case Results Record
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       LANDMARK CASE RESULTS & PROVEN VERDICTS
-       ========================================================================== -->
-  <section class="results-section" id="results">
+  <!-- [NEW] Core Practice Disciplines Section -->
+  <section class="section-padding">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Proven Verdicts & Precedents</span>
-        <h2 class="section-title">Courtroom Victories That Define Our Heritage</h2>
+        <span class="section-badge">Areas of Practice</span>
+        <h2 class="section-title">Focused Trial & Appellate Disciplines</h2>
         <p class="section-desc">
-          Past performance does not guarantee future results, but our track record of multi-million dollar jury verdicts and historic federal dismissals demonstrates the depth of our trial capability.
+          We do not operate as general practice lawyers. We limit our docket exclusively to high-stakes litigation where the courtroom stakes command seasoned federal depth.
         </p>
       </div>
 
-      <div class="results-stats-row">
-        <div class="result-stat-box">
-          <div class="result-stat-val">$42.5M</div>
-          <div class="result-stat-label">Commercial Aviation Disaster Settlement</div>
+      <div class="cards-grid-3">
+        
+        <!-- Practice 1: Aviation -->
+        <div class="practice-card">
+          <div class="practice-top-row">
+            <span class="practice-category-tag">Catastrophic Trial</span>
+            <span class="practice-benchmark-pill">$42.5M Benchmark</span>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <img src="images/icon-aviation.svg" alt="Aviation Icon" width="48" height="48">
+          </div>
+          <h3 class="card-title">Commercial Aviation & Mass Disaster</h3>
+          <p class="card-desc">
+            Representing families in international air crashes, component failure, and airline liability under the Warsaw & Montreal Conventions.
+          </p>
+          <ul class="practice-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>NTSB investigation coordination</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>100% Contingency (0$ Upfront)</span>
+            </li>
+          </ul>
+          <button class="btn btn-outline-dark" style="margin-top: auto;" onclick="openPracticeModal('aviation')">
+            View Trial Scope
+          </button>
         </div>
-        <div class="result-stat-box">
-          <div class="result-stat-val">$28.2M</div>
-          <div class="result-stat-label">Federal Trucking Jury Verdict</div>
+
+        <!-- Practice 2: Appellate -->
+        <div class="practice-card">
+          <div class="practice-top-row">
+            <span class="practice-category-tag">Appellate Heritage</span>
+            <span class="practice-benchmark-pill">16 SCOTUS Briefs</span>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <img src="images/icon-appellate.svg" alt="Appellate Icon" width="48" height="48">
+          </div>
+          <h3 class="card-title">Federal & State Appellate Advocacy</h3>
+          <p class="card-desc">
+            Protecting multi-million dollar judgments and reversing trial court errors before the U.S. Supreme Court and Federal Circuit Courts.
+          </p>
+          <ul class="practice-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>SCOTUS Certiorari petitions</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Predictable Fixed-Fee Retainers</span>
+            </li>
+          </ul>
+          <button class="btn btn-outline-dark" style="margin-top: auto;" onclick="openPracticeModal('appellate')">
+            View Appellate Strategy
+          </button>
         </div>
-        <div class="result-stat-box">
-          <div class="result-stat-val">SCOTUS</div>
-          <div class="result-stat-label">Antitrust Precedent Established</div>
+
+        <!-- Practice 3: Commercial Trucking -->
+        <div class="practice-card">
+          <div class="practice-top-row">
+            <span class="practice-category-tag">Catastrophic Trial</span>
+            <span class="practice-benchmark-pill">$28.2M Jury Verdict</span>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <img src="images/icon-trucking.svg" alt="Trucking Icon" width="48" height="48">
+          </div>
+          <h3 class="card-title">Interstate Commercial Trucking</h3>
+          <p class="card-desc">
+            Aggressive trial prosecution of multi-ton freight carriers, uncovering driver fatigue, falsified logs, and corporate broker liability.
+          </p>
+          <ul class="practice-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Tractor ECM / Black-Box extraction</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Zero Cost Unless Successful</span>
+            </li>
+          </ul>
+          <button class="btn btn-outline-dark" style="margin-top: auto;" onclick="openPracticeModal('trucking')">
+            View Trucking Protocol
+          </button>
         </div>
+
+        <!-- Practice 4: Commercial Trial -->
+        <div class="practice-card">
+          <div class="practice-top-row">
+            <span class="practice-category-tag">Commercial Trial</span>
+            <span class="practice-benchmark-pill">$18.7M Award</span>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <img src="images/icon-commercial.svg" alt="Commercial Icon" width="48" height="48">
+          </div>
+          <h3 class="card-title">High-Stakes Commercial Trials</h3>
+          <p class="card-desc">
+            Litigating bet-the-company partnership disputes, trade secret theft, executive fiduciary breaches, and AAA/JAMS arbitrations.
+          </p>
+          <ul class="practice-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Emergency TROs & Asset Injunctions</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Hybrid Risk-Sharing Retainers</span>
+            </li>
+          </ul>
+          <button class="btn btn-outline-dark" style="margin-top: auto;" onclick="openPracticeModal('commercial')">
+            View Commercial Scope
+          </button>
+        </div>
+
+        <!-- Practice 5: White-Collar -->
+        <div class="practice-card">
+          <div class="practice-top-row">
+            <span class="practice-category-tag">Federal Practice</span>
+            <span class="practice-benchmark-pill">Complete Dismissal</span>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <img src="images/icon-whitecollar.svg" alt="White Collar Icon" width="48" height="48">
+          </div>
+          <h3 class="card-title">White-Collar & Government Defense</h3>
+          <p class="card-desc">
+            Defending corporate executives and institutions facing DOJ, SEC, CFTC, and Congressional investigations, pre-indictment.
+          </p>
+          <ul class="practice-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Grand jury subpoena response</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Parallel civil & criminal defense</span>
+            </li>
+          </ul>
+          <button class="btn btn-outline-dark" style="margin-top: auto;" onclick="openPracticeModal('whitecollar')">
+            View Defense Scope
+          </button>
+        </div>
+
+        <!-- Practice 6: Maritime -->
+        <div class="practice-card">
+          <div class="practice-top-row">
+            <span class="practice-category-tag">Admiralty Trial</span>
+            <span class="practice-benchmark-pill">$14.1M Rig Recovery</span>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <img src="images/icon-maritime.svg" alt="Maritime Icon" width="48" height="48">
+          </div>
+          <h3 class="card-title">Maritime & Admiralty Catastrophes</h3>
+          <p class="card-desc">
+            Litigating Jones Act wrongful death, offshore drilling explosions, vessel unseaworthiness, and commercial maritime casualties.
+          </p>
+          <ul class="practice-features-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Jones Act & DOHSA claims</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Contingency: 0$ Out of Pocket</span>
+            </li>
+          </ul>
+          <button class="btn btn-outline-dark" style="margin-top: auto;" onclick="openPracticeModal('maritime')">
+            View Admiralty Protocol
+          </button>
+        </div>
+
       </div>
 
-      <!-- Filter Buttons for Case Results -->
-      <div class="practices-filter-bar" style="margin-bottom: 36px;">
-        <button class="filter-btn results-filter-btn active" data-category="all">All Landmark Cases</button>
-        <button class="filter-btn results-filter-btn" data-category="aviation">Aviation Disaster</button>
-        <button class="filter-btn results-filter-btn" data-category="trucking">Commercial Trucking</button>
-        <button class="filter-btn results-filter-btn" data-category="appellate">Federal Appeals</button>
-        <button class="filter-btn results-filter-btn" data-category="commercial">Commercial Arbitration</button>
-        <button class="filter-btn results-filter-btn" data-category="whitecollar">White-Collar</button>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="practices.html" class="btn btn-outline-dark">
+          Explore Detailed Practice Disciplines & Case Criteria
+        </a>
       </div>
-
-      <!-- Case Results Cards Container (Rendered via JS) -->
-      <div class="results-cards-grid" id="results-cards-container"></div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       SENIOR TRIAL PARTNERS & APPELLATE SCHOLARS
-       ========================================================================== -->
-  <section class="attorneys-section" id="attorneys">
+  <!-- [NEW] Senior Trial Partners Spotlight -->
+  <section class="section-padding" style="background: var(--bg-alt); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Senior Trial Partners</span>
-        <h2 class="section-title">Decades of Federal Courtroom Supremacy</h2>
+        <span class="section-badge">Senior Advocacy</span>
+        <h2 class="section-title">The Partners Who Stand Beside You in Court</h2>
         <p class="section-desc">
-          Our partners possess Ivy League pedigrees, former federal prosecutor experience, and prestigious judicial clerkships. When you retain Atlantic Trial Attorneys, you are represented directly by our namesakes.
+          Former federal judicial clerks, Ivy League honors graduates, and Fellows of the American College of Trial Lawyers. We never assign your case to associate trainees.
         </p>
       </div>
 
-      <div class="attorneys-grid">
-        <!-- Partner 1: Robert M. Vance -->
+      <div class="cards-grid-3">
+        
+        <!-- Partner 1 -->
         <div class="attorney-card">
-          <div class="attorney-portrait-placeholder">
-            <div class="attorney-initials-badge">RMV</div>
+          <div class="attorney-portrait-wrap">
+            <img src="images/attorney-vance.jpg" alt="Robert M. Vance, Esq." class="attorney-portrait-img">
+            <span class="attorney-role-badge">Founding Partner</span>
           </div>
-          <div class="attorney-body">
+          <div class="attorney-card-body">
             <h3 class="attorney-name">Robert M. Vance, Esq.</h3>
-            <div class="attorney-role">Managing Partner & Lead Trial Counsel</div>
-            <p class="attorney-bio">
-              Over 30 years commanding high-stakes jury trials in federal courts nationwide. Former Assistant U.S. Attorney with 30+ verdicts exceeding $10M.
+            <div class="attorney-title">Lead Trial Counsel & Aviation Litigator</div>
+            <p class="attorney-bio-short">
+              Fellow of the American College of Trial Lawyers. 30+ years leading aviation mass casualty dockets and catastrophic transportation jury trials nationwide.
             </p>
-            <ul class="attorney-credentials">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Harvard Law School (J.D., magna cum laude)</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Admissions: FL, NY, U.S. Supreme Court, 2nd & 11th Circuits</span>
-              </li>
-            </ul>
-            <div class="attorney-card-footer">
-              <button class="btn btn-outline-dark" style="padding: 8px 16px; font-size: 0.84rem;" onclick="openAttorneyModal('vance')">
-                View Judicial Record
-              </button>
-              <span style="font-size: 0.78rem; color: var(--secondary); font-weight: 700;">Hall of Fame</span>
+            <div class="attorney-meta-list">
+              <div class="attorney-meta-item">
+                <span class="meta-label">Education:</span>
+                <span class="meta-val">Harvard Law School, J.D. (magna cum laude)</span>
+              </div>
+              <div class="attorney-meta-item">
+                <span class="meta-label">Judicial Clerkship:</span>
+                <span class="meta-val">U.S. Court of Appeals for the 11th Circuit</span>
+              </div>
             </div>
+            <button class="btn btn-outline-dark" style="width: 100%; margin-top: auto;" onclick="openAttorneyModal('vance')">
+              View Complete Dossier & Admissions
+            </button>
           </div>
         </div>
 
-        <!-- Partner 2: Elena Rostova -->
+        <!-- Partner 2 -->
         <div class="attorney-card">
-          <div class="attorney-portrait-placeholder">
-            <div class="attorney-initials-badge">ER</div>
+          <div class="attorney-portrait-wrap">
+            <img src="images/attorney-rostova.jpg" alt="Elena Rostova, Esq." class="attorney-portrait-img">
+            <span class="attorney-role-badge">Appellate Chair</span>
           </div>
-          <div class="attorney-body">
+          <div class="attorney-card-body">
             <h3 class="attorney-name">Elena Rostova, Esq.</h3>
-            <div class="attorney-role">Chair of Appellate Practice</div>
-            <p class="attorney-bio">
-              Former U.S. Supreme Court Law Clerk and Columbia Law Review editor. Renowned for authoring 16 SCOTUS briefs and reversing multi-million dollar judgments.
+            <div class="attorney-title">Chair, Appellate & White-Collar Practice</div>
+            <p class="attorney-bio-short">
+              Former SCOTUS law clerk and national appellate scholar. Authored or argued 16 briefs before the Supreme Court of the United States.
             </p>
-            <ul class="attorney-credentials">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Columbia Law School (J.D., Articles Editor)</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Admissions: D.C., NY, All Federal Circuit Courts</span>
-              </li>
-            </ul>
-            <div class="attorney-card-footer">
-              <button class="btn btn-outline-dark" style="padding: 8px 16px; font-size: 0.84rem;" onclick="openAttorneyModal('rostova')">
-                View Judicial Record
-              </button>
-              <span style="font-size: 0.78rem; color: var(--secondary); font-weight: 700;">Chambers Band 1</span>
+            <div class="attorney-meta-list">
+              <div class="attorney-meta-item">
+                <span class="meta-label">Education:</span>
+                <span class="meta-val">Columbia Law School, J.D. (Law Review Editor)</span>
+              </div>
+              <div class="attorney-meta-item">
+                <span class="meta-label">Judicial Clerkship:</span>
+                <span class="meta-val">SCOTUS & U.S. 2nd Circuit Court of Appeals</span>
+              </div>
             </div>
+            <button class="btn btn-outline-dark" style="width: 100%; margin-top: auto;" onclick="openAttorneyModal('rostova')">
+              View Complete Dossier & Admissions
+            </button>
           </div>
         </div>
 
-        <!-- Partner 3: Marcus J. Sterling -->
+        <!-- Partner 3 -->
         <div class="attorney-card">
-          <div class="attorney-portrait-placeholder">
-            <div class="attorney-initials-badge">MJS</div>
+          <div class="attorney-portrait-wrap">
+            <img src="images/attorney-sterling.jpg" alt="Marcus J. Sterling, Esq." class="attorney-portrait-img">
+            <span class="attorney-role-badge">Commercial Chair</span>
           </div>
-          <div class="attorney-body">
+          <div class="attorney-card-body">
             <h3 class="attorney-name">Marcus J. Sterling, Esq.</h3>
-            <div class="attorney-role">Senior Partner, Commercial & Injury</div>
-            <p class="attorney-bio">
-              Renowned for electrifying courtroom storytelling and dismantling opposing economic experts. Over $250M recovered for founders and catastrophe victims.
+            <div class="attorney-title">Chair, Commercial Trial & Admiralty Litigation</div>
+            <p class="attorney-bio-short">
+              Former U.S. Naval Officer bringing military precision to courtroom battles. Guides bet-the-company shareholder freeze-outs and offshore energy disasters.
             </p>
-            <ul class="attorney-credentials">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Georgetown University Law Center (J.D., cum laude)</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Admissions: Florida, D.C., U.S. Court of Federal Claims</span>
-              </li>
-            </ul>
-            <div class="attorney-card-footer">
-              <button class="btn btn-outline-dark" style="padding: 8px 16px; font-size: 0.84rem;" onclick="openAttorneyModal('sterling')">
-                View Judicial Record
-              </button>
-              <span style="font-size: 0.78rem; color: var(--secondary); font-weight: 700;">AV Preeminent®</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       FEE TRANSPARENCY & RISK-SHARING STRUCTURES
-       ========================================================================== -->
-  <section class="fees-section" id="fees">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Fee Transparency Policy</span>
-        <h2 class="section-title">Aligned Incentives. Zero Hidden Costs.</h2>
-        <p class="section-desc">
-          High-stakes litigation should not be a black hole of billable hours. We offer clear contingency risk-sharing, predictable flat-fee appellate retainers, and structured commercial hybrid models.
-        </p>
-      </div>
-
-      <div class="fee-models-grid">
-        <!-- Model 1: Performance Contingency -->
-        <div class="fee-model-card featured">
-          <div class="fee-popular-pill">Most Retained for Injury</div>
-          <h3 class="fee-model-title">Performance Contingency</h3>
-          <div class="fee-model-price">0$ Out of Pocket</div>
-          <p class="fee-model-desc">
-            For catastrophic injury, aviation disasters, and commercial trucking wrongful death. We advance 100% of litigation and expert costs. You pay zero legal fees unless we win.
-          </p>
-          <ul class="fee-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>100% of court filings and expert fees funded by the firm</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>No hourly fees, retainers, or monthly legal invoices</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Standard contingency percentage only paid upon actual recovery</span>
-            </li>
-          </ul>
-          <button class="btn btn-primary" onclick="scrollToEvaluation()">Inquire Contingency Terms</button>
-        </div>
-
-        <!-- Model 2: Flat-Fee Appellate Retainer -->
-        <div class="fee-model-card">
-          <h3 class="fee-model-title">Predictable Appellate Retainers</h3>
-          <div class="fee-model-price">Fixed Phased Fees</div>
-          <p class="fee-model-desc">
-            For state and federal appeals. We review the trial record, draft the principal briefs, and deliver oral arguments under fixed transparent fee schedules without billing inflation.
-          </p>
-          <ul class="fee-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Phased milestones: Record Review, Opening Brief, Oral Argument</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Full budget certainty for corporate boards & trial co-counsel</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Supreme Court certiorari preparation packages</span>
-            </li>
-          </ul>
-          <button class="btn btn-outline-dark" onclick="scrollToEvaluation()">Request Appellate Retainer</button>
-        </div>
-
-        <!-- Model 3: Hybrid Commercial -->
-        <div class="fee-model-card">
-          <h3 class="fee-model-title">Hybrid Commercial Retainers</h3>
-          <div class="fee-model-price">Reduced Hourly + Success</div>
-          <p class="fee-model-desc">
-            For founders, venture funds, and middle-market enterprises in commercial disputes. Blends reduced monthly fees with a success bonus tied to financial recovery.
-          </p>
-          <ul class="fee-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Significantly discounted base hourly rates</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Success fee triggered strictly upon favorable resolution</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Aligns attorney compensation with client financial victory</span>
-            </li>
-          </ul>
-          <button class="btn btn-outline-dark" onclick="scrollToEvaluation()">Discuss Commercial Terms</button>
-        </div>
-      </div>
-
-      <!-- Interactive Fee Estimator Widget -->
-      <div class="fee-calculator-box">
-        <h3 class="calculator-title">Interactive Litigation Fee Estimator</h3>
-        <p class="calculator-subtitle">Estimate standard fee structures and cost ranges for your legal scenario</p>
-
-        <div class="calc-grid">
-          <div>
-            <label class="form-label">Matter Discipline</label>
-            <select class="form-control" id="calc-category">
-              <option value="catastrophic">Catastrophic Personal Injury / Wrongful Death</option>
-              <option value="aviation">Aviation Disaster & Mass Transportation</option>
-              <option value="trucking">Commercial Trucking Collision</option>
-              <option value="appellate">Federal or State Court of Appeals</option>
-              <option value="commercial">Commercial Shareholder / Contract Dispute</option>
-            </select>
-          </div>
-          <div>
-            <label class="form-label">Litigation Stage</label>
-            <select class="form-control" id="calc-stage">
-              <option value="preliminary">Pre-Filing / Pre-Trial Investigation</option>
-              <option value="active">Active Courtroom Litigation / Impending Trial</option>
-              <option value="appeal">Post-Judgment / Pending Notice of Appeal</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="calc-result-banner">
-          <div>
-            <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.05em;">Estimated Cost Model</div>
-            <div class="calc-estimate-amount" id="calc-amount-display">0$ Upfront Contingency</div>
-            <div style="font-size: 0.88rem; color: var(--text-main); margin-top: 6px; max-width: 540px;" id="calc-text-display">
-              <strong>Performance Contingency:</strong> We front 100% of case preparation, expert witnesses, and court costs. You pay zero legal fees unless Atlantic Trial Attorneys secures a winning verdict or settlement (Standard 33.3% - 40% upon recovery).
-            </div>
-          </div>
-          <button class="btn btn-primary" onclick="scrollToEvaluation()">Lock In Terms</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       INTERACTIVE 4-STEP CASE EVALUATION WIZARD
-       ========================================================================== -->
-  <section class="consultation-section" id="evaluation">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">Confidential Partner Review</span>
-        <h2 class="section-title">Schedule a Strategic Case Evaluation</h2>
-        <p class="section-desc">
-          Complete our secure intake wizard below. Your matter is reviewed directly by Senior Partners under strict Attorney-Client privilege. We provide conflict clearance and preliminary assessment within two business hours.
-        </p>
-      </div>
-
-      <div class="wizard-container">
-        <!-- Left Column: Commitments -->
-        <div class="wizard-info-col">
-          <div class="wizard-info-content">
-            <h3 class="wizard-info-title">Direct Senior Partner Access</h3>
-            <p class="wizard-info-desc">
-              Your inquiry will not be routed to a generic answering service. Our trial partners review every catastrophic matter personally.
-            </p>
-            <ul class="wizard-commitments">
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>2-Hour Response Time:</strong> Rapid turnaround for time-sensitive court deadlines.</span>
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Conflict Check Priority:</strong> Immediate clearance against adverse corporate parties.</span>
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Strict Confidentiality:</strong> Covered by Rule 4-1.6 attorney privilege regardless of retention.</span>
-              </li>
-            </ul>
-          </div>
-          <div style="font-size: 0.85rem; color: #D1DEDB; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px;">
-            Emergency Trial Hotline: <strong>(800) 840-ATLA</strong>
-          </div>
-        </div>
-
-        <!-- Right Column: 4-Step Wizard Form -->
-        <div class="wizard-form-col">
-          <div class="step-nav">
-            <div class="step-indicator active">
-              <span class="step-bubble">1</span>
-              <span>Discipline</span>
-            </div>
-            <div class="step-indicator">
-              <span class="step-bubble">2</span>
-              <span>Details</span>
-            </div>
-            <div class="step-indicator">
-              <span class="step-bubble">3</span>
-              <span>Format</span>
-            </div>
-            <div class="step-indicator">
-              <span class="step-bubble">4</span>
-              <span>Confirm</span>
-            </div>
-          </div>
-
-          <!-- Step 1: Matter Category -->
-          <div class="wizard-step-pane active" id="wizard-pane-1">
-            <h4 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Select Matter Category</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Choose the primary legal area of your matter:</p>
-
-            <div class="radio-cards-grid">
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_category" value="Aviation & Mass Disaster" checked>
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Aviation & Mass Disaster</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">Commercial & general aircraft incidents</div>
-                </div>
-              </label>
-
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_category" value="Catastrophic Trucking & Injury">
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Catastrophic Trucking / TBI</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">Wrongful death, spinal injury, collision</div>
-                </div>
-              </label>
-
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_category" value="Federal & State Appeals">
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Federal & State Appeals</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">SCOTUS, Circuit & state appellate briefing</div>
-                </div>
-              </label>
-
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_category" value="High-Stakes Commercial Trial">
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Commercial & Shareholder Trial</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">Bet-the-company business litigation</div>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Step 2: Critical Deadlines & Outline -->
-          <div class="wizard-step-pane" id="wizard-pane-2">
-            <h4 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Case Outline & Critical Deadlines</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Please share a brief summary of the matter and any impending deadlines:</p>
-
-            <div class="form-group">
-              <label class="form-label">Impending Procedural Stage</label>
-              <select class="form-control" id="wizard-deadline">
-                <option value="none">No immediate court filing deadline</option>
-                <option value="notice_of_appeal">Notice of Appeal deadline pending (Within 30 days)</option>
-                <option value="trial_scheduled">Trial date scheduled in federal/state court</option>
-                <option value="statute_of_limitations">Statute of limitations approaching</option>
-                <option value="emergency_injunction">Emergency preliminary injunction or TRO requested</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Executive Matter Summary</label>
-              <textarea class="form-control" id="wizard-summary" rows="4" placeholder="Describe the adverse parties, jurisdiction, estimated damages, and key issues..."></textarea>
-            </div>
-          </div>
-
-          <!-- Step 3: Meeting Format -->
-          <div class="wizard-step-pane" id="wizard-pane-3">
-            <h4 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Conference Preference</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">How would you prefer to conduct your preliminary strategy conference?</p>
-
-            <div class="radio-cards-grid">
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_format" value="Secure Video Conference" checked>
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Secure Video Conference</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">Encrypted Zoom / WebEx meeting</div>
-                </div>
-              </label>
-
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_format" value="Direct Teleconference">
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Direct Phone Conference</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">Direct partner phone line</div>
-                </div>
-              </label>
-
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_format" value="In-Person Miami Office">
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Miami Office (Brickell)</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">In-person conference</div>
-                </div>
-              </label>
-
-              <label class="radio-card-label">
-                <input type="radio" name="wizard_format" value="In-Person Washington D.C.">
-                <div class="radio-card-content">
-                  <div style="font-weight: 700;">Washington D.C. (K Street)</div>
-                  <div style="font-size: 0.82rem; color: var(--text-muted);">In-person conference</div>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Step 4: Contact & Verification -->
-          <div class="wizard-step-pane" id="wizard-pane-4">
-            <h4 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Confirm Contact Credentials</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Your contact details are encrypted and kept strictly confidential:</p>
-
-            <div class="form-group">
-              <label class="form-label">Full Legal Name / Entity Representative</label>
-              <input type="text" class="form-control" id="wizard-name" placeholder="e.g. Richard K. Hawthorne" required>
-            </div>
-
-            <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-              <div>
-                <label class="form-label">Direct Phone</label>
-                <input type="tel" class="form-control" id="wizard-phone" placeholder="(555) 000-0000" required>
+            <div class="attorney-meta-list">
+              <div class="attorney-meta-item">
+                <span class="meta-label">Education:</span>
+                <span class="meta-val">Georgetown Law Center, J.D. • USNA B.S.</span>
               </div>
-              <div>
-                <label class="form-label">Secure Email</label>
-                <input type="email" class="form-control" id="wizard-email" placeholder="name@domain.com">
+              <div class="attorney-meta-item">
+                <span class="meta-label">Judicial Clerkship:</span>
+                <span class="meta-val">Chief Judge, U.S. District Court (SDFL)</span>
               </div>
             </div>
-
-            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">
-              By submitting, you authorize Atlantic Trial Attorneys to perform an internal conflicts check. An attorney-client relationship is not created until a formal retention agreement is executed.
-            </div>
-          </div>
-
-          <!-- Wizard Action Buttons -->
-          <div class="wizard-buttons">
-            <button class="btn btn-outline-dark" id="wizard-prev-btn" style="display: none;">Previous Step</button>
-            <button class="btn btn-primary" id="wizard-next-btn">Continue to Next Step</button>
+            <button class="btn btn-outline-dark" style="width: 100%; margin-top: auto;" onclick="openAttorneyModal('sterling')">
+              View Complete Dossier & Admissions
+            </button>
           </div>
         </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="attorneys.html" class="btn btn-primary">
+          Meet All Senior Partners & Scholarly Heritage
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       CLIENT & CO-COUNSEL REVIEWS
-       ========================================================================== -->
-  <section class="testimonials-section">
+  <!-- [NEW] The 4-Pillar Trial Protocol Flow -->
+  <section class="section-padding">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Client & Referring Counsel Praise</span>
-        <h2 class="section-title">Endorsed by General Counsels and Trial Peers</h2>
+        <span class="section-badge">The Courtroom Advantage</span>
+        <h2 class="section-title">The Anatomy of a Winning Jury Verdict</h2>
         <p class="section-desc">
-          Over half of our caseload comes from other attorneys who trust Atlantic Trial Attorneys when their matters head into high-risk jury trials or federal appeals.
+          How Atlantic Trial Attorneys prepares for courtroom victory from the hour we are retained.
         </p>
       </div>
 
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">
-            "When our commercial carrier collision case faced an aggressive defense motion for summary judgment, we brought Robert Vance into trial. He commanded the courtroom with unmatched precision, resulting in a $28.2M federal verdict."
+      <div class="protocol-grid">
+        
+        <div class="protocol-card">
+          <div class="protocol-num">01</div>
+          <h3 class="protocol-title">24-Hour Forensic Evidence Lockdown</h3>
+          <p class="protocol-desc">
+            Immediate dispatch of rapid-response investigators, securing aircraft flight data recorders (FDR), commercial truck electronic control modules (ECM), and issuing preservation subpoenas before evidence is destroyed.
           </p>
-          <div class="testimonial-client">
-            <div>
-              <div class="client-name">Gregory T. Stone, Esq.</div>
-              <div class="client-tag">Referring Litigation Co-Counsel (Chicago, IL)</div>
-            </div>
-          </div>
         </div>
 
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">
-            "Elena Rostova is quite simply the finest appellate writer in the country. She crafted our SCOTUS amicus brief and dismantled a catastrophic lower-court ruling. Her mastery of constitutional doctrine saved our company hundreds of millions."
+        <div class="protocol-card">
+          <div class="protocol-num">02</div>
+          <h3 class="protocol-title">World-Class Expert Engineering Bench</h3>
+          <p class="protocol-desc">
+            We retain world-renowned aeronautical engineers, biomechanical collision experts, metallurgists, and economic forensic accountants with courtroom credibility.
           </p>
-          <div class="testimonial-client">
-            <div>
-              <div class="client-name">David L. Kensington</div>
-              <div class="client-tag">General Counsel, National Logistics Holdings</div>
-            </div>
-          </div>
         </div>
 
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">
-            "Following my family's tragedy in a commercial aviation disaster, Atlantic Trial Attorneys stood with us against two multi-national manufacturers. They were relentless in court and compassionate in private."
+        <div class="protocol-card">
+          <div class="protocol-num">03</div>
+          <h3 class="protocol-title">Replica Courtroom Mock Juries</h3>
+          <p class="protocol-desc">
+            Before stepping into a federal courtroom, we run rigorous trial simulations and focus groups with local juror demographics to pressure-test every exhibit and argument.
           </p>
-          <div class="testimonial-client">
-            <div>
-              <div class="client-name">Claire M. Dupont</div>
-              <div class="client-tag">Wrongful Death Catastrophe Client</div>
-            </div>
-          </div>
         </div>
+
+        <div class="protocol-card">
+          <div class="protocol-num">04</div>
+          <h3 class="protocol-title">Embedded Appellate Record Shield</h3>
+          <p class="protocol-desc">
+            Our former federal appellate clerks work alongside the trial team at counsel table to ensure jury instructions and trial rulings are bulletproof on appeal.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       FREQUENTLY ASKED QUESTIONS (FAQ)
-       ========================================================================== -->
-  <section class="faq-section" id="faq">
+  <!-- Comparison Matrix Section -->
+  <section class="section-padding" style="background: var(--bg-card); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Client FAQ</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
+        <span class="section-badge">The Atlantic Trial Model</span>
+        <h2 class="section-title">Boutique Trial Depth vs. Big-Law Overhead</h2>
         <p class="section-desc">
-          Direct answers regarding our nationwide representation, co-counsel fee sharing, contingency arrangements, and trial readiness.
+          Compare the agility, personal accountability, and trial readiness of Atlantic Trial Attorneys against traditional high-overhead volume firms.
         </p>
       </div>
 
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>Do you accept catastrophic injury cases outside Florida and New York?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Yes. Atlantic Trial Attorneys frequently handles catastrophic litigation across federal district courts nationwide via pro hac vice admission, partnering seamlessly with local counsel. For mass disaster and multi-district litigation (MDL), our trial partners appear across all federal circuits.
-          </div>
+      <div style="text-align: center;">
+        <div class="mobile-table-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Swipe horizontally to compare firm models</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>How does fee sharing work when another attorney refers a case?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            We value referral and co-counsel partnerships. We routinely co-counsel and share fees with referring attorneys in accordance with Florida Bar Rule 4-1.5(f)(4)(D), New York Rule 1.5(g), and applicable state ethical rules, with full client consent and disclosure.
+      <div class="matrix-scroll-wrapper">
+        <div class="comparison-matrix">
+          <div class="matrix-header">
+            <div class="matrix-header-cell standard">Litigation Dimension</div>
+            <div class="matrix-header-cell standard">Mega-Firm / Settlement Mills</div>
+            <div class="matrix-header-cell featured">Atlantic Trial Attorneys</div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>What happens if an injury case is not won at trial?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Under our Performance Contingency structure, you owe zero legal fees and zero out-of-pocket litigation expenses if there is no financial recovery. Our firm assumes the complete financial risk of experts, travel, depositions, and trial preparation.
+          <div class="matrix-row">
+            <div class="matrix-cell feature-name">Counsel Handling Depositions & Trial</div>
+            <div class="matrix-cell standard">First-to-third year junior associates</div>
+            <div class="matrix-cell featured">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Senior Trial Partners with 20+ years pedigree
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>How quickly can you step in for an emergency trial or pending appeal deadline?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            We operate a dedicated rapid-response appellate and emergency trial unit. If you face a strict 30-day notice of appeal deadline, emergency preliminary injunction, or impending trial date, we can conduct an expedited conflict check and assess your trial record within 24 hours.
+          <div class="matrix-row">
+            <div class="matrix-cell feature-name">Willingness to Take Cases to Verdict</div>
+            <div class="matrix-cell standard">Settles at discount before courtroom phase</div>
+            <div class="matrix-cell featured">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Trial-ready with full mock juries & focus groups
+            </div>
+          </div>
+
+          <div class="matrix-row">
+            <div class="matrix-cell feature-name">Billing Transparency</div>
+            <div class="matrix-cell standard">Inflated billable hours & opaque retainers</div>
+            <div class="matrix-cell featured">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              100% Contingency ($0 Upfront) or Flat Phased Retainers
+            </div>
+          </div>
+
+          <div class="matrix-row">
+            <div class="matrix-cell feature-name">Direct Client Access</div>
+            <div class="matrix-cell standard">Filtered through paralegals and case managers</div>
+            <div class="matrix-cell featured">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Direct mobile and calendar access to lead counsel
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       PRESTIGE FOOTER & LEGAL OFFICES
-       ========================================================================== -->
+  <!-- [NEW] Testimonials & Peer Endorsements -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Client & Co-Counsel Recognition</span>
+        <h2 class="section-title">Endorsements from the Front Lines</h2>
+        <p class="section-desc">
+          What corporate counsel, referring trial attorneys, and catastrophic injury clients say about Atlantic Trial Attorneys.
+        </p>
+      </div>
+
+      <div class="cards-grid-3">
+        
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <div class="quote-decor">“</div>
+          <p class="testimonial-quote">
+            When an emergency injunction threatened our core enterprise, Elena Rostova stepped into the 11th Circuit and had the injunction vacated within 72 hours. Their appellate intellect is unmatched.
+          </p>
+          <div class="testimonial-client">
+            <div>
+              <div class="client-name">David H. Caldwell</div>
+              <div class="client-tag">General Counsel, MedTech Solutions Corp.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <div class="quote-decor">“</div>
+          <p class="testimonial-quote">
+            We brought Atlantic Trial Attorneys in as trial co-counsel on a commercial aviation crash. Their engineering experts and trial preparation secured a $42.5M settlement. True trial partners.
+          </p>
+          <div class="testimonial-client">
+            <div>
+              <div class="client-name">Michael R. Sterling, Esq.</div>
+              <div class="client-tag">Referring Trial Counsel, Chicago, IL</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+          <div class="quote-decor">“</div>
+          <p class="testimonial-quote">
+            Robert Vance treated our grieving family with utmost grace, but in court he was relentless. Watching him cross-examine the defense’s accident reconstruction expert gave our family justice.
+          </p>
+          <div class="testimonial-client">
+            <div>
+              <div class="client-name">Sarah & Thomas Jenkins</div>
+              <div class="client-tag">Catastrophic Trucking Collision Clients</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- [NEW] Fee Policy Highlight Strip -->
+  <section style="background: var(--bg-alt); padding: 50px 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div style="background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; box-shadow: var(--shadow-sm);">
+        <div style="max-width: 680px;">
+          <span class="section-badge" style="margin-bottom: 8px;">Transparent Representation</span>
+          <h3 style="font-size: 1.6rem; color: var(--primary); margin-bottom: 8px;">Zero Out-Of-Pocket Fees for Catastrophic Victims</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">
+            We front 100% of litigation costs and trial expenses. If we do not recover financial compensation for your family, you owe us nothing. For appeals and commercial matters, we offer predictable flat retainers.
+          </p>
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="fees.html" class="btn btn-outline-dark">Review Fee Calculator</a>
+          <a href="contact.html" class="btn btn-primary">Start Evaluation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action Banner -->
+  <section class="section-padding" style="background: var(--primary); color: #FFFFFF; text-align: center;">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-badge" style="background: rgba(189, 150, 126, 0.2); color: var(--accent);">Time-Sensitive Court Deadlines</span>
+      <h2 style="font-size: 2.6rem; color: #FFFFFF; margin: 16px 0 20px;">Facing an Impending Trial or Notice of Appeal?</h2>
+      <p style="color: #D1DEDB; font-size: 1.1rem; line-height: 1.7; margin-bottom: 36px;">
+        Our rapid-response trial and appellate team reviews case records within two business hours under strict privilege.
+      </p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary">Start Confidential Evaluation</a>
+        <a href="tel:8008402852" class="btn btn-outline-light">Call 24/7 Hotline: (800) 840-ATLA</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- Prestige Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <!-- Col 1: Firm Overview & Crest -->
-        <div>
-          <div class="brand-block" style="margin-bottom: 20px;">
+      
+      <!-- Tier 1: Brand & Credibility Strip -->
+      <div class="footer-top-row">
+        <div class="footer-brand-box">
+          <div class="brand-block" style="margin-bottom: 14px;">
             <img src="logo.svg" alt="Atlantic Trial Attorneys Crest" class="brand-emblem" width="46" height="46">
             <div class="brand-text">
               <span class="brand-name">Atlantic Trial Attorneys</span>
               <span class="brand-subtitle">Catastrophic Trial & Appellate Counsel</span>
             </div>
           </div>
-          <p style="font-size: 0.88rem; line-height: 1.65; margin-bottom: 24px; color: #D1DEDB;">
-            Boutique federal trial and appellate counsel handling high-stakes catastrophic injury, aviation disasters, bet-the-company commercial litigation, and Supreme Court appeals.
+          <p class="footer-brand-desc">
+            Boutique federal trial and appellate counsel handling high-stakes catastrophic injury, mass aviation disasters, bet-the-company commercial litigation, and Supreme Court appeals nationwide.
           </p>
-          <div style="font-size: 0.82rem; color: #8CA7A3;">
-            © 2026 Atlantic Trial Attorneys LLP. All Rights Reserved.
-          </div>
         </div>
 
-        <!-- Col 2: Practice Areas -->
-        <div>
-          <h4 class="footer-col-title">Trial Disciplines</h4>
-          <ul class="footer-links">
-            <li><a href="#practices">Aviation & Mass Casualty</a></li>
-            <li><a href="#practices">Federal & State Appeals</a></li>
-            <li><a href="#practices">Commercial Trucking Catastrophes</a></li>
-            <li><a href="#practices">Bet-The-Company Commercial Trials</a></li>
-            <li><a href="#practices">White-Collar & Government Defense</a></li>
-            <li><a href="#practices">Maritime & Admiralty Catastrophes</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Firm Philosophy -->
-        <div>
-          <h4 class="footer-col-title">Firm Heritage</h4>
-          <ul class="footer-links">
-            <li><a href="#advantage">The Atlantic Trial Difference</a></li>
-            <li><a href="#results">Landmark Courtroom Verdicts</a></li>
-            <li><a href="#attorneys">Senior Trial Partners</a></li>
-            <li><a href="#fees">Fee Transparency Policy</a></li>
-            <li><a href="#faq">Referring Counsel Inquiries</a></li>
-            <li><a href="#evaluation">Confidential Case Intake</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Primary Offices -->
-        <div>
-          <h4 class="footer-col-title">Primary Offices</h4>
-          <div class="office-item">
-            <div class="office-city">Miami Headquarters</div>
-            <div class="office-address">Brickell City Centre, Suite 3800<br>Miami, FL 33131 • (305) 555-ATLA</div>
+        <div class="footer-badges-box">
+          <div class="footer-trust-pill">
+            <span>AV Preeminent® 5.0/5.0 • ACTL Fellow • Chambers USA Band 1</span>
           </div>
-          <div class="office-item">
-            <div class="office-city">Washington, D.C.</div>
-            <div class="office-address">1775 K Street NW, Suite 900<br>Washington, D.C. 20006 • (202) 555-ATLA</div>
-          </div>
-          <div class="office-item">
-            <div class="office-city">New York Office</div>
-            <div class="office-address">Rockefeller Center, 42nd Floor<br>New York, NY 10111 • (212) 555-ATLA</div>
+          <div class="footer-hotline-callout">
+            <span>Emergency 24/7 Counsel Hotline: </span>
+            <a href="tel:8008402852">(800) 840-ATLA</a>
           </div>
         </div>
       </div>
 
-      <!-- Legal & Bar Disclaimers -->
+      <!-- Tier 2: National Offices Strip (Across Full Width) -->
+      <div class="footer-offices-strip">
+        <div class="footer-strip-header">
+          <span class="footer-strip-title">National Trial & Appellate Corridors</span>
+          <span class="footer-strip-sub">Direct access to Senior Partners in key federal judicial districts</span>
+        </div>
+        <div class="footer-offices-grid">
+          <div class="footer-office-card">
+            <div class="office-tag">National Headquarters</div>
+            <div class="office-city">Miami, Florida</div>
+            <div class="office-address">Brickell City Centre, Suite 3800 • Miami, FL 33131</div>
+            <a href="tel:3055552852" class="office-phone-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (305) 555-ATLA
+            </a>
+          </div>
+
+          <div class="footer-office-card">
+            <div class="office-tag">Appellate & Federal</div>
+            <div class="office-city">Washington, D.C.</div>
+            <div class="office-address">1775 K Street NW, Suite 900 • Washington, D.C. 20006</div>
+            <a href="tel:2025552852" class="office-phone-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (202) 555-ATLA
+            </a>
+          </div>
+
+          <div class="footer-office-card">
+            <div class="office-tag">Commercial & Financial</div>
+            <div class="office-city">New York, New York</div>
+            <div class="office-address">Rockefeller Center, 42nd Fl. • New York, NY 10111</div>
+            <a href="tel:2125552852" class="office-phone-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (212) 555-ATLA
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 3: Symmetrical Links Row (Navigation + Disciplines) -->
+      <div class="footer-links-row">
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="practices.html">Practice Disciplines</a></li>
+            <li><a href="verdicts.html">Landmark Verdicts (M+)</a></li>
+            <li><a href="attorneys.html">Senior Counsel Profiles</a></li>
+            <li><a href="fees.html">Fee Transparency Policy</a></li>
+            <li><a href="contact.html">Case Evaluation Intake</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Primary Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="practices.html">Aviation & Mass Disasters</a></li>
+            <li><a href="practices.html">Federal & State Appeals</a></li>
+            <li><a href="practices.html">Commercial Trucking Catastrophes</a></li>
+            <li><a href="practices.html">Commercial & Shareholder Trials</a></li>
+            <li><a href="practices.html">White-Collar & Government Defense</a></li>
+            <li><a href="practices.html">Maritime & Admiralty Wrongful Death</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tier 4: Regulatory Disclaimer & Legal Bottom -->
       <div class="footer-disclaimer-box">
         <p>
           <strong>ATTORNEY ADVERTISING NOTICE:</strong> The information on this website is for general informational purposes only and does not constitute formal legal advice. Viewing this site or submitting an evaluation does not create an attorney-client relationship. Prior results do not guarantee a similar outcome. Every legal matter is unique and subject to court rules and evidence. Atlantic Trial Attorneys LLP practices in federal and state courts across the United States.
@@ -1135,35 +977,29 @@
       </div>
 
       <div class="footer-bottom-row">
-        <div>Designed strictly under Atlantic Trial Attorneys Brand Standards.</div>
-        <div>
+        <div>© 2026 Atlantic Trial Attorneys LLP. Designed strictly under Brand Standards.</div>
+        <div class="footer-legal-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Representation</a>
           <a href="#">Client Portal Access</a>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- ==========================================================================
-       MODAL DIALOG (For Practice Area Scope & Senior Partner Bios)
-       ========================================================================== -->
+  <!-- Modal Dialog -->
   <div class="modal-overlay" id="ata-modal">
     <div class="modal-box">
       <div class="modal-header">
         <h3 class="modal-title" id="ata-modal-title">Courtroom Details</h3>
         <button class="modal-close-btn" id="ata-modal-close" aria-label="Close dialog">&times;</button>
       </div>
-      <div class="modal-body" id="ata-modal-body">
-        <!-- Injected via JavaScript -->
-      </div>
+      <div class="modal-body" id="ata-modal-body"></div>
     </div>
   </div>
 
-  <!-- Toast Notification -->
   <div class="toast-msg" id="ata-toast">Notification Message</div>
-
-  <!-- JavaScript Engine -->
-  <script src="app.js?v=1.0"></script>
+  <script src="app.js?v=2.8"></script>
 </body>
 </html>

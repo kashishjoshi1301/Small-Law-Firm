@@ -1,0 +1,32 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgVance" x1="200" y1="0" x2="200" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1B4D4B" />
+      <stop offset="100%" stop-color="#153B3A" />
+    </linearGradient>
+    <linearGradient id="goldHighlight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E2C5B3"/>
+      <stop offset="100%" stop-color="#BD967E"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgVance)"/>
+  <!-- Classical Library / Courtroom Window Silhouette in Background -->
+  <path d="M120 40C120 30 140 20 200 20C260 20 280 30 280 40V180H120V40Z" stroke="#28605C" stroke-width="2" opacity="0.4"/>
+  <line x1="200" y1="20" x2="200" y2="180" stroke="#28605C" stroke-width="1.5" opacity="0.4"/>
+  <line x1="120" y1="90" x2="280" y2="90" stroke="#28605C" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Stylized Senior Trial Counsel Silhouette -->
+  <!-- Suit Shoulders & Lapel -->
+  <path d="M100 300C100 240 140 210 180 200L200 250L220 200C260 210 300 240 300 300H100Z" fill="#0E2827"/>
+  <!-- White Dress Shirt & Tie -->
+  <path d="M185 200L200 230L215 200H185Z" fill="#F3F0EB"/>
+  <path d="M196 215L200 280L204 215H196Z" fill="#BD967E"/>
+  <!-- Head & Hair Silhouette -->
+  <circle cx="200" cy="140" r="46" fill="#D9BAA7"/>
+  <!-- Executive Hair -->
+  <path d="M154 135C154 100 170 85 200 85C230 85 246 100 246 125C246 125 235 110 200 110C165 110 154 135 154 135Z" fill="#153B3A"/>
+  
+  <!-- Prestige AV Preeminent Badge Overlay -->
+  <rect x="24" y="24" width="130" height="28" rx="14" fill="rgba(21, 59, 58, 0.85)" stroke="#BD967E" stroke-width="1.2"/>
+  <text x="89" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#BD967E" text-anchor="middle" letter-spacing="1">HARVARD LAW</text>
+</svg>

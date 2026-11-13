@@ -1,0 +1,134 @@
+<svg width="600" height="420" viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGrad" x1="300" y1="0" x2="300" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1B4D4B" />
+      <stop offset="70%" stop-color="#153B3A" />
+      <stop offset="100%" stop-color="#0E2827" />
+    </linearGradient>
+
+    <linearGradient id="goldBeam" x1="300" y1="50" x2="300" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#BD967E" stop-opacity="0.4" />
+      <stop offset="60%" stop-color="#BD967E" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#BD967E" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="pillarGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#28605C" />
+      <stop offset="30%" stop-color="#367873" />
+      <stop offset="70%" stop-color="#28605C" />
+      <stop offset="100%" stop-color="#1A4543" />
+    </linearGradient>
+
+    <linearGradient id="marblePediment" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E4D4B" />
+      <stop offset="50%" stop-color="#28605C" />
+      <stop offset="100%" stop-color="#1E4D4B" />
+    </linearGradient>
+
+    <linearGradient id="goldAcc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2C5B3" />
+      <stop offset="50%" stop-color="#BD967E" />
+      <stop offset="100%" stop-color="#9C735B" />
+    </linearGradient>
+
+    <radialGradient id="centralLight" cx="300" cy="220" r="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#BD967E" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#28605C" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#153B3A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="420" rx="16" fill="url(#skyGrad)" />
+  <circle cx="300" cy="210" r="220" fill="url(#centralLight)" />
+
+  <!-- Classical Courthouse Pediment (Triangle Frieze) -->
+  <path d="M300 45L80 135H520L300 45Z" fill="url(#marblePediment)" stroke="url(#goldAcc)" stroke-width="2" />
+  
+  <!-- Pediment Inner Relief -->
+  <path d="M300 65L120 130H480L300 65Z" fill="none" stroke="url(#goldAcc)" stroke-width="1" stroke-dasharray="3 3" opacity="0.6" />
+
+  <!-- Scales of Justice Emblem Inside Pediment -->
+  <circle cx="300" cy="102" r="14" fill="#153B3A" stroke="url(#goldAcc)" stroke-width="1.5" />
+  <path d="M294 102H306" stroke="url(#goldAcc)" stroke-width="1.5"/>
+  <line x1="300" y1="94" x2="300" y2="110" stroke="url(#goldAcc)" stroke-width="1.5"/>
+  <path d="M292 102L289 108H295L292 102Z" fill="url(#goldAcc)" />
+  <path d="M308 102L305 108H311L308 102Z" fill="url(#goldAcc)" />
+
+  <!-- Cornice Architrave -->
+  <rect x="70" y="135" width="460" height="18" fill="url(#goldAcc)" opacity="0.9" rx="1" />
+  <rect x="60" y="153" width="480" height="12" fill="#1A4846" />
+
+  <!-- Central Light Rays Behind Columns -->
+  <polygon points="300,50 140,380 460,380" fill="url(#goldBeam)" />
+
+  <!-- Grand Roman Colonnade (6 Fluted Columns) -->
+  <!-- Column 1 -->
+  <g>
+    <!-- Capital -->
+    <path d="M96 165H134L130 178H100L96 165Z" fill="url(#goldAcc)" />
+    <!-- Shaft -->
+    <rect x="100" y="178" width="30" height="162" fill="url(#pillarGrad)" />
+    <line x1="106" y1="178" x2="106" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <line x1="115" y1="178" x2="115" y2="340" stroke="#367873" stroke-width="1.2" opacity="0.7"/>
+    <line x1="124" y1="178" x2="124" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <!-- Base -->
+    <rect x="96" y="340" width="38" height="12" fill="url(#goldAcc)" rx="1" />
+  </g>
+
+  <!-- Column 2 -->
+  <g>
+    <path d="M166 165H204L200 178H170L166 165Z" fill="url(#goldAcc)" />
+    <rect x="170" y="178" width="30" height="162" fill="url(#pillarGrad)" />
+    <line x1="176" y1="178" x2="176" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <line x1="185" y1="178" x2="185" y2="340" stroke="#367873" stroke-width="1.2" opacity="0.7"/>
+    <line x1="194" y1="178" x2="194" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <rect x="166" y="340" width="38" height="12" fill="url(#goldAcc)" rx="1" />
+  </g>
+
+  <!-- Column 3 -->
+  <g>
+    <path d="M236 165H274L270 178H240L236 165Z" fill="url(#goldAcc)" />
+    <rect x="240" y="178" width="30" height="162" fill="url(#pillarGrad)" />
+    <line x1="246" y1="178" x2="246" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <line x1="255" y1="178" x2="255" y2="340" stroke="#367873" stroke-width="1.2" opacity="0.7"/>
+    <line x1="264" y1="178" x2="264" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <rect x="236" y="340" width="38" height="12" fill="url(#goldAcc)" rx="1" />
+  </g>
+
+  <!-- Column 4 -->
+  <g>
+    <path d="M326 165H364L360 178H330L326 165Z" fill="url(#goldAcc)" />
+    <rect x="330" y="178" width="30" height="162" fill="url(#pillarGrad)" />
+    <line x1="336" y1="178" x2="336" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <line x1="345" y1="178" x2="345" y2="340" stroke="#367873" stroke-width="1.2" opacity="0.7"/>
+    <line x1="354" y1="178" x2="354" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <rect x="326" y="340" width="38" height="12" fill="url(#goldAcc)" rx="1" />
+  </g>
+
+  <!-- Column 5 -->
+  <g>
+    <path d="M396 165H434L430 178H400L396 165Z" fill="url(#goldAcc)" />
+    <rect x="400" y="178" width="30" height="162" fill="url(#pillarGrad)" />
+    <line x1="406" y1="178" x2="406" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <line x1="415" y1="178" x2="415" y2="340" stroke="#367873" stroke-width="1.2" opacity="0.7"/>
+    <line x1="424" y1="178" x2="424" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <rect x="396" y="340" width="38" height="12" fill="url(#goldAcc)" rx="1" />
+  </g>
+
+  <!-- Column 6 -->
+  <g>
+    <path d="M466 165H504L500 178H470L466 165Z" fill="url(#goldAcc)" />
+    <rect x="470" y="178" width="30" height="162" fill="url(#pillarGrad)" />
+    <line x1="476" y1="178" x2="476" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <line x1="485" y1="178" x2="485" y2="340" stroke="#367873" stroke-width="1.2" opacity="0.7"/>
+    <line x1="494" y1="178" x2="494" y2="340" stroke="#367873" stroke-width="1" opacity="0.5"/>
+    <rect x="466" y="340" width="38" height="12" fill="url(#goldAcc)" rx="1" />
+  </g>
+
+  <!-- Grand Courthouse Marble Steps (Tiered Base) -->
+  <rect x="40" y="352" width="520" height="14" fill="#20504D" />
+  <rect x="30" y="366" width="540" height="14" fill="#18413E" />
+  <rect x="20" y="380" width="560" height="16" fill="#123432" />
+  <rect x="10" y="396" width="580" height="18" fill="url(#goldAcc)" opacity="0.85" rx="2" />
+</svg>

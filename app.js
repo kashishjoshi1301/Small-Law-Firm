@@ -1,9 +1,113 @@
 /**
- * Atlantic Trial Attorneys | Interactive Website Engine
- * Catastrophic Trial Advocacy & Federal Appellate Counsel
+ * Atlantic Trial Attorneys | Multi-Page Interactive Engine
  */
 
-// Practice Areas Deep-Dive Data
+// Mobile Navigation Engine with Background Scroll Lock
+function initMobileNavigation() {
+  const toggleBtn = document.getElementById('mobile-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  let backdrop = document.getElementById('mobile-backdrop');
+
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'mobile-backdrop';
+    backdrop.className = 'mobile-nav-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  function openMenu() {
+    drawer?.classList.add('open');
+    backdrop?.classList.add('open');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    drawer?.classList.remove('open');
+    backdrop?.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+
+  if (toggleBtn && drawer) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (drawer.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    backdrop.addEventListener('click', closeMenu);
+
+    // Close when clicking any nav link in drawer
+    drawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+
+    // Close if resized above mobile breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && drawer.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileNavigation();
+
+  // Initialize Page-Specific Features
+  initQuickIntakeForm();
+  initFeeCalculator();
+  initConsultationWizard();
+  initFAQAccordion();
+  initModals();
+  initPracticeFilter();
+  initCaseResultsFilter();
+});
+
+/* ==========================================================================
+   Quick Hero Callback Intake Form
+   ========================================================================== */
+function initQuickIntakeForm() {
+  const form = document.getElementById('hero-quick-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const phoneInput = document.getElementById('hero-client-phone');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Securing Partner Callback...';
+    }
+
+    setTimeout(() => {
+      form.innerHTML = `
+        <div style="text-align: center; padding: 24px 10px;">
+          <div style="color: var(--secondary); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">✓ Priority Callback Logged</div>
+          <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 16px;">
+            A Senior Trial Partner on-duty has been notified. We will call <strong>${phoneInput ? phoneInput.value : 'your number'}</strong> directly within 15 minutes.
+          </p>
+          <div style="font-size: 0.78rem; color: var(--text-muted);">Protected by Attorney-Client Privilege</div>
+        </div>
+      `;
+      showToast('Direct Partner Callback Requested.');
+    }, 600);
+  });
+}
+
+/* ==========================================================================
+   Practice Areas Deep-Dive Modals & Filtering
+   ========================================================================== */
 const PRACTICE_DATA = {
   aviation: {
     title: "Aviation & Mass Catastrophe Litigation",
@@ -87,11 +191,34 @@ const PRACTICE_DATA = {
       "Offshore drilling rig and maritime vessel safety protocols analysis",
       "Admiralty bench and jury trials in coastal federal districts"
     ],
-    feeStructure: "Contingency Basis: 0$ out of pocket."
+    feeStructure: "Contingency Basis: $0 out of pocket."
   }
 };
 
-// Case Results Data
+function initPracticeFilter() {
+  const buttons = document.querySelectorAll('.practice-filter-btn');
+  const cards = document.querySelectorAll('.practice-card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      cards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-practice') === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   Case Results Filtering & Rendering (Verdicts Page)
+   ========================================================================== */
 const CASE_RESULTS = [
   {
     amount: "$42,500,000",
@@ -143,48 +270,6 @@ const CASE_RESULTS = [
   }
 ];
 
-// Attorney Biographies Data
-const ATTORNEY_BIOS = {
-  vance: {
-    name: "Robert M. Vance, Esq.",
-    role: "Managing Partner & Lead Trial Counsel",
-    education: "Harvard Law School (J.D., magna cum laude) • Dartmouth College (B.A.)",
-    barAdmissions: "Florida Bar, New York Bar, U.S. Supreme Court, 11th & 2nd Circuits",
-    achievements: "Trial Lawyers Hall of Fame • 30+ jury verdicts exceeding $10M • Former Assistant U.S. Attorney",
-    bio: "Robert M. Vance has earned a reputation as one of America's fiercest trial courtroom advocates. Over three decades, he has commanded multi-million dollar jury trials across aviation catastrophes, commercial trucking fatalities, and multi-district torts. Vance served as an Assistant United States Attorney before founding Atlantic Trial Attorneys, bringing ruthless federal trial discipline to every case."
-  },
-  rostova: {
-    name: "Elena Rostova, Esq.",
-    role: "Chair of Appellate & Constitutional Practice",
-    education: "Columbia Law School (J.D., Articles Editor, Columbia Law Review) • Princeton University (A.B.)",
-    barAdmissions: "District of Columbia Bar, New York Bar, U.S. Supreme Court, All Federal Circuit Courts",
-    achievements: "Former Law Clerk to Justice of the U.S. Supreme Court • Author of 16 SCOTUS Petitions • Chambers Band 1 Appellate Advocate",
-    bio: "Elena Rostova directs the firm's appellate, constitutional, and complex motions practice. After clerking on the Supreme Court of the United States and the D.C. Circuit Court of Appeals, she has established legal precedents cited in hundreds of judicial opinions. She is regularly retained as embedded appellate counsel during high-stakes trials to craft bulletproof jury instructions and preserve appellate victory."
-  },
-  sterling: {
-    name: "Marcus J. Sterling, Esq.",
-    role: "Senior Partner, Catastrophic Injury & Commercial Trials",
-    education: "Georgetown University Law Center (J.D., cum laude) • Duke University (B.S. in Economics)",
-    barAdmissions: "Florida Bar, District of Columbia Bar, U.S. Court of Federal Claims",
-    achievements: "AV Preeminent® 5.0/5.0 Peer Review Rated • Over $250M recovered for catastrophic injury victims and founders",
-    bio: "Marcus J. Sterling combines economic mastery with electrifying courtroom storytelling. He specializes in catastrophic commercial liability, offshore maritime accidents, and complex shareholder disputes. Sterling is renowned for cross-examining opposing technical and financial experts, methodically dismantling defense narratives before juries."
-  }
-};
-
-// Document Initialization
-document.addEventListener('DOMContentLoaded', () => {
-  initCaseResultsFilter();
-  initPracticeFilter();
-  initFeeCalculator();
-  initConsultationWizard();
-  initFAQAccordion();
-  initModals();
-  initQuickIntakeForm();
-});
-
-/* ==========================================================================
-   Case Results Filtering & Rendering
-   ========================================================================== */
 function initCaseResultsFilter() {
   const container = document.getElementById('results-cards-container');
   if (!container) return;
@@ -221,7 +306,7 @@ function renderResults(results) {
       <h3 class="result-title">${r.title}</h3>
       <p class="result-summary">${r.summary}</p>
       <div class="result-meta-row">
-        <span>Lead Counsel: <strong class="result-meta-lead">${r.lead}</strong></span>
+        <span>Lead Counsel: <strong style="color: var(--primary);">${r.lead}</strong></span>
         <span style="color: var(--secondary); font-weight: 600;">Verified Matter</span>
       </div>
     </div>
@@ -229,31 +314,7 @@ function renderResults(results) {
 }
 
 /* ==========================================================================
-   Practice Areas Filtering
-   ========================================================================== */
-function initPracticeFilter() {
-  const buttons = document.querySelectorAll('.practice-filter-btn');
-  const cards = document.querySelectorAll('.practice-card');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-      cards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-practice') === filter) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-}
-
-/* ==========================================================================
-   Interactive Fee & Contingency Estimator
+   Interactive Fee Estimator
    ========================================================================== */
 function initFeeCalculator() {
   const categorySelect = document.getElementById('calc-category');
@@ -268,7 +329,7 @@ function initFeeCalculator() {
     const stage = stageSelect.value;
 
     if (cat === 'catastrophic' || cat === 'aviation' || cat === 'trucking') {
-      amountDisplay.textContent = "0$ Upfront Contingency";
+      amountDisplay.textContent = "$0 Upfront Contingency";
       textDisplay.innerHTML = "<strong>Performance Contingency:</strong> We front 100% of case preparation, expert witnesses, and court costs. You pay zero legal fees unless Atlantic Trial Attorneys secures a winning verdict or settlement (Standard 33.3% - 40% upon recovery).";
     } else if (cat === 'appellate') {
       if (stage === 'preliminary') {
@@ -321,12 +382,10 @@ function initConsultationWizard() {
 function goToWizardStep(step) {
   wizardCurrentStep = step;
 
-  // Update step panes
   document.querySelectorAll('.wizard-step-pane').forEach((pane, idx) => {
     pane.classList.toggle('active', idx + 1 === step);
   });
 
-  // Update step indicators
   document.querySelectorAll('.step-indicator').forEach((ind, idx) => {
     ind.classList.remove('active', 'completed');
     if (idx + 1 === step) {
@@ -336,7 +395,6 @@ function goToWizardStep(step) {
     }
   });
 
-  // Update buttons
   const prevBtn = document.getElementById('wizard-prev-btn');
   const nextBtn = document.getElementById('wizard-next-btn');
 
@@ -370,7 +428,6 @@ function validateCurrentStep(step) {
   if (step === 4) {
     const name = document.getElementById('wizard-name');
     const phone = document.getElementById('wizard-phone');
-    const email = document.getElementById('wizard-email');
 
     if (!name || name.value.trim() === '') {
       showToast('Please enter your full legal name.');
@@ -411,45 +468,10 @@ function submitWizardForm() {
       </div>
     `;
 
-    document.querySelector('.wizard-buttons').style.display = 'none';
+    const btnRow = document.querySelector('.wizard-buttons');
+    if (btnRow) btnRow.style.display = 'none';
     showToast(`Case intake confirmed: #${refCode}`);
   }
-}
-
-/* ==========================================================================
-   Quick Hero Callback Intake Form
-   ========================================================================== */
-function initQuickIntakeForm() {
-  const form = document.getElementById('hero-quick-form');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nameInput = document.getElementById('hero-client-name');
-    const phoneInput = document.getElementById('hero-client-phone');
-
-    if (!nameInput.value || !phoneInput.value) {
-      showToast('Please enter your name and direct phone number.');
-      return;
-    }
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Securing Partner Callback...';
-
-    setTimeout(() => {
-      form.innerHTML = `
-        <div style="text-align: center; padding: 24px 10px;">
-          <div style="color: var(--secondary); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">✓ Priority Callback Logged</div>
-          <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 16px;">
-            A Senior Partner on-duty has been notified. We will call <strong>${phoneInput.value}</strong> directly.
-          </p>
-          <div style="font-size: 0.78rem; color: var(--text-muted);">Protected by Attorney-Client Confidentiality</div>
-        </div>
-      `;
-      showToast('Direct Partner Callback Requested.');
-    }, 600);
-  });
 }
 
 /* ==========================================================================
@@ -459,18 +481,20 @@ function initFAQAccordion() {
   const items = document.querySelectorAll('.faq-item');
   items.forEach(item => {
     const btn = item.querySelector('.faq-question-btn');
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('active');
-      items.forEach(i => i.classList.remove('active'));
-      if (!isOpen) {
-        item.classList.add('active');
-      }
-    });
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        items.forEach(i => i.classList.remove('active'));
+        if (!isOpen) {
+          item.classList.add('active');
+        }
+      });
+    }
   });
 }
 
 /* ==========================================================================
-   Modal Dialogs (Practice Strategy & Attorney Bios)
+   Modal System
    ========================================================================== */
 function initModals() {
   const modal = document.getElementById('ata-modal');
@@ -497,7 +521,7 @@ function openModal(title, htmlContent) {
     titleEl.textContent = title;
     bodyEl.innerHTML = htmlContent;
     modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('menu-open');
   }
 }
 
@@ -505,11 +529,10 @@ function closeModal() {
   const modal = document.getElementById('ata-modal');
   if (modal) {
     modal.classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   }
 }
 
-// Global Triggers for Modals
 window.openPracticeModal = function(key) {
   const data = PRACTICE_DATA[key];
   if (!data) return;
@@ -542,7 +565,7 @@ window.openPracticeModal = function(key) {
       </div>
 
       <div style="text-align: right;">
-        <button class="btn btn-primary" onclick="closeModal(); scrollToEvaluation();">Request Direct Case Review</button>
+        <a href="contact.html" class="btn btn-primary" onclick="closeModal();">Request Case Evaluation</a>
       </div>
     </div>
   `;
@@ -551,40 +574,104 @@ window.openPracticeModal = function(key) {
 };
 
 window.openAttorneyModal = function(key) {
-  const bio = ATTORNEY_BIOS[key];
-  if (!bio) return;
+  const attorneys = {
+    vance: {
+      name: "Robert M. Vance, Esq.",
+      role: "Senior Founding Partner & Lead Trial Counsel",
+      image: "images/attorney-vance.jpg",
+      education: "Harvard Law School, J.D. (magna cum laude) • Dartmouth College, B.A. (summa cum laude)",
+      clerkship: "Law Clerk to the Hon. Gerald Bard Tjoflat, U.S. Court of Appeals for the Eleventh Circuit",
+      admissions: "Supreme Court of the United States • Florida Bar • New York Bar • District of Columbia Bar • U.S. Courts of Appeals (2nd, 5th, 11th Circuits)",
+      bio: "Over three decades of trial practice, Robert Vance has earned a nationwide reputation for commanding the courtroom in complex aviation crashes, multidistrict mass torts, and catastrophic transportation disasters. Fellow of the American College of Trial Lawyers (ACTL) and International Academy of Trial Lawyers.",
+      achievements: [
+        "$42,500,000 settlement for victims of commercial airline mechanical failure",
+        "$28,200,000 unanimous federal jury verdict against interstate logistics broker",
+        "Lead Liaison Counsel in two federal Multi-District Litigation (MDL) dockets",
+        "Named 'Trial Lawyer of the Year' by the National Law Journal"
+      ]
+    },
+    rostova: {
+      name: "Elena Rostova, Esq.",
+      role: "Partner & Chair, Appellate & Constitutional Practice",
+      image: "images/attorney-rostova.jpg",
+      education: "Columbia Law School, J.D. (Articles Editor, Columbia Law Review) • Princeton University, A.B. (Woodrow Wilson School)",
+      clerkship: "Supreme Court of the United States • Law Clerk to the Hon. Pierre N. Leval, U.S. Court of Appeals for the Second Circuit",
+      admissions: "Supreme Court of the United States • New York Bar • District of Columbia Bar • U.S. Courts of Appeals (1st, 2nd, 3rd, 9th, 11th, D.C. Circuits)",
+      bio: "Elena Rostova directs Atlantic Trial Attorneys' appellate and white-collar defense groups. Recognized as one of the country's preeminent brief-writers and oral advocates, she has argued or authored briefs in 16 matters before the Supreme Court of the United States and dozens of federal circuit arguments.",
+      achievements: [
+        "Authored winning merits brief in landmark 11th Circuit antitrust appeal",
+        "Complete declination of prosecution in DOJ/SEC healthcare securities investigation",
+        "Special Appellate Counsel to trial firms seeking to preserve 8-figure jury verdicts",
+        "Member of the American Law Institute (ALI)"
+      ]
+    },
+    sterling: {
+      name: "Marcus J. Sterling, Esq.",
+      role: "Partner & Chair, Commercial Trial & Admiralty Litigation",
+      image: "images/attorney-sterling.jpg",
+      education: "Georgetown University Law Center, J.D. (cum laude) • United States Naval Academy, B.S. (with Distinction)",
+      clerkship: "Law Clerk to the Hon. Edward B. Davis, Chief Judge, U.S. District Court for the Southern District of Florida",
+      admissions: "Supreme Court of the United States • Florida Bar • New York Bar • U.S. Court of Appeals (5th and 11th Circuits) • U.S. District Courts (SDNY, EDNY, SDFL, MDFL)",
+      bio: "A former naval officer and seasoned commercial litigator, Marcus Sterling brings rigorous tactical precision to high-stakes shareholder freeze-outs, trade secret espionage, maritime casualties, and offshore energy disasters. He acts as lead trial counsel in federal courts and international arbitrations.",
+      achievements: [
+        "$18,700,000 final arbitration award in technology partnership freeze-out",
+        "$14,100,000 recovery under the Jones Act & General Maritime Law for offshore blowout",
+        "Emergency TRO securing proprietary source code against foreign corporate adversary",
+        "Chambers USA Band 1 in General Commercial Litigation"
+      ]
+    }
+  };
+
+  const a = attorneys[key];
+  if (!a) return;
 
   const content = `
-    <div>
-      <h4 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 4px;">${bio.name}</h4>
-      <div style="color: var(--accent); font-weight: 700; font-size: 0.88rem; text-transform: uppercase; margin-bottom: 20px;">${bio.role}</div>
-
-      <div style="background: var(--bg-page); border: 1px solid var(--border-light); border-radius: 8px; padding: 18px; margin-bottom: 22px;">
-        <div style="font-size: 0.85rem; margin-bottom: 6px;"><strong>Education:</strong> ${bio.education}</div>
-        <div style="font-size: 0.85rem; margin-bottom: 6px;"><strong>Admissions:</strong> ${bio.barAdmissions}</div>
-        <div style="font-size: 0.85rem; color: var(--secondary);"><strong>Accreditations:</strong> ${bio.achievements}</div>
+    <div style="margin-bottom: 20px;">
+      <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+        <img src="${a.image}" alt="${a.name}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--accent); flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <div>
+          <span class="section-badge" style="margin-bottom: 6px;">${a.role}</span>
+          <h4 style="font-size: 1.4rem; color: var(--primary); margin: 4px 0 0 0;">${a.name}</h4>
+        </div>
+      </div>
+      <p style="font-size: 0.94rem; color: var(--text-main); line-height: 1.7; margin-bottom: 20px;">${a.bio}</p>
+      
+      <div style="background: var(--bg-page); border: 1px solid var(--border-light); border-radius: 8px; padding: 18px; margin-bottom: 20px;">
+        <div style="margin-bottom: 12px;">
+          <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Education</strong>
+          <span style="font-size: 0.9rem; color: var(--primary); font-weight: 600;">${a.education}</span>
+        </div>
+        <div style="margin-bottom: 12px;">
+          <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Judicial Clerkship</strong>
+          <span style="font-size: 0.9rem; color: var(--text-main);">${a.clerkship}</span>
+        </div>
+        <div>
+          <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Bar & Court Admissions</strong>
+          <span style="font-size: 0.88rem; color: var(--secondary);">${a.admissions}</span>
+        </div>
       </div>
 
-      <p style="font-size: 0.96rem; color: var(--text-main); line-height: 1.75; margin-bottom: 24px;">${bio.bio}</p>
+      <h5 style="font-size: 1.05rem; color: var(--primary); margin-bottom: 12px;">Landmark Matters & Recognition</h5>
+      <ul style="list-style: none; margin-bottom: 24px;">
+        ${a.achievements.map(ach => `
+          <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: var(--text-main); margin-bottom: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" style="margin-top: 3px; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>${ach}</span>
+          </li>
+        `).join('')}
+      </ul>
 
-      <div style="text-align: right;">
-        <button class="btn btn-primary" onclick="closeModal(); scrollToEvaluation();">Schedule Private Case Conference</button>
+      <div style="text-align: right; display: flex; gap: 12px; justify-content: flex-end;">
+        <button class="btn btn-outline-dark" onclick="closeModal();">Close</button>
+        <a href="contact.html" class="btn btn-primary" onclick="closeModal();">Consult With Senior Counsel</a>
       </div>
     </div>
   `;
 
-  openModal("Senior Partner Credentials", content);
+  openModal("Senior Counsel Profile & Credentials", content);
 };
 
-// Scroll Helper
-window.scrollToEvaluation = function() {
-  const el = document.getElementById('evaluation');
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
-// Toast Helper
+// Toast
 function showToast(msg) {
   const toast = document.getElementById('ata-toast');
   if (!toast) return;

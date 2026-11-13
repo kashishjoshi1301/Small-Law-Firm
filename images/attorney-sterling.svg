@@ -1,0 +1,25 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgSterling" x1="200" y1="0" x2="200" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E4D4B" />
+      <stop offset="100%" stop-color="#153B3A" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bgSterling)"/>
+  <!-- Commercial Tower & Scale Graphic -->
+  <line x1="80" y1="200" x2="320" y2="200" stroke="#28605C" stroke-width="2" opacity="0.3"/>
+  <circle cx="200" cy="90" r="60" fill="#28605C" opacity="0.2"/>
+
+  <!-- Senior Trial Partner Silhouette -->
+  <!-- Suit Shoulders & Tie -->
+  <path d="M100 300C100 240 140 210 180 200L200 250L220 200C260 210 300 240 300 300H100Z" fill="#0E2827"/>
+  <path d="M185 200L200 230L215 200H185Z" fill="#F3F0EB"/>
+  <path d="M196 215L200 275L204 215H196Z" fill="#28605C"/>
+  <!-- Head & Hair Silhouette -->
+  <circle cx="200" cy="140" r="45" fill="#D4B49E"/>
+  <path d="M155 130C155 96 175 84 200 84C225 84 245 96 245 130C245 130 235 106 200 106C165 106 155 130 155 130Z" fill="#153B3A"/>
+
+  <!-- Badge Overlay -->
+  <rect x="24" y="24" width="144" height="28" rx="14" fill="rgba(21, 59, 58, 0.85)" stroke="#BD967E" stroke-width="1.2"/>
+  <text x="96" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#BD967E" text-anchor="middle" letter-spacing="1">GEORGETOWN LAW</text>
+</svg>
