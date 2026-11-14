@@ -47,7 +47,7 @@ export default function FeeCalculator() {
   }
 
   return (
-    <div className="calc-card">
+    <div className="calc-card fee-calculator-box">
       <div className="calc-header">
         <span className="section-badge">Interactive Estimator</span>
         <h3 className="calc-title">Fee Transparency &amp; Retainer Calculator</h3>
@@ -63,12 +63,12 @@ export default function FeeCalculator() {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="catastrophic">Catastrophic Personal Injury &amp; Wrongful Death</option>
-            <option value="aviation">Commercial Aviation &amp; Mass Disaster</option>
-            <option value="trucking">Commercial Trucking Catastrophe</option>
-            <option value="appellate">Federal or State Appellate Advocacy</option>
-            <option value="commercial">Commercial Dispute &amp; Shareholder Litigation</option>
-            <option value="whitecollar">White-Collar &amp; Government Defense</option>
+            <option value="catastrophic">Catastrophic Injury &amp; Wrongful Death</option>
+            <option value="aviation">Commercial Aviation &amp; Air Disaster</option>
+            <option value="trucking">Commercial Trucking Collision</option>
+            <option value="appellate">Federal &amp; State Court Appeal</option>
+            <option value="commercial">Commercial Dispute &amp; Litigation</option>
+            <option value="whitecollar">White-Collar &amp; DOJ Defense</option>
           </select>
         </div>
 
@@ -81,8 +81,8 @@ export default function FeeCalculator() {
             onChange={(e) => setStage(e.target.value)}
           >
             <option value="preliminary">Pre-Filing / Pre-Trial Investigation</option>
-            <option value="filed">Active Litigation / Discovery In Progress</option>
-            <option value="trial">Impending Trial Docket (Within 60 Days)</option>
+            <option value="filed">Active Litigation &amp; Discovery</option>
+            <option value="trial">Impending Trial Docket (&lt;60 Days)</option>
             <option value="appeal">Post-Verdict Notice of Appeal</option>
           </select>
         </div>

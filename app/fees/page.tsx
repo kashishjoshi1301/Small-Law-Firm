@@ -21,14 +21,14 @@ export default function FeesPage() {
         <div className="container">
           <div className="fee-models-grid">
             {/* Model 1 */}
-            <div className="fee-card featured">
+            <div className="fee-model-card fee-card featured">
               <span className="fee-tier-badge">Catastrophic &amp; Aviation</span>
               <h3 className="fee-title">100% Contingency ($0 Out of Pocket)</h3>
               <p className="fee-desc">
                 For commercial airline disasters, catastrophic trucking collisions, and maritime casualties, we assume 100% of financial risk. We advance all litigation costs, expert fees, and accident reconstruction expenses.
               </p>
               <div className="fee-highlight">$0 Upfront Retainer</div>
-              <ul className="fee-features">
+              <ul className="fee-features fee-checklist">
                 <li>Zero out-of-pocket costs to client or referring counsel</li>
                 <li>Standard 33.3% - 40% only upon successful recovery</li>
                 <li>If we do not obtain a recovery, you owe nothing</li>
@@ -40,14 +40,14 @@ export default function FeesPage() {
             </div>
 
             {/* Model 2 */}
-            <div className="fee-card">
+            <div className="fee-model-card fee-card">
               <span className="fee-tier-badge">Appellate Advocacy</span>
               <h3 className="fee-title">Predictable Flat-Fee Retainers</h3>
               <p className="fee-desc">
                 For federal circuit appeals, emergency petitions for writ of certiorari, and amicus curiae briefing, we quote fixed phased retainers. You receive clear financial predictability before any work commences.
               </p>
               <div className="fee-highlight">Fixed Phased Milestone Retainers</div>
-              <ul className="fee-features">
+              <ul className="fee-features fee-checklist">
                 <li>Fixed fee for record review and error assessment</li>
                 <li>Structured phase pricing for opening, reply, and oral argument</li>
                 <li>No vague billable-hour bloat or duplicate associate staffing</li>
@@ -59,14 +59,14 @@ export default function FeesPage() {
             </div>
 
             {/* Model 3 */}
-            <div className="fee-card">
+            <div className="fee-model-card fee-card">
               <span className="fee-tier-badge">Commercial Trials</span>
               <h3 className="fee-title">Risk-Sharing Hybrid &amp; Success Fees</h3>
               <p className="fee-desc">
                 For bet-the-company commercial arbitration, shareholder freeze-outs, and trade secret disputes, we offer hybrid structures pairing reduced base retainers with agreed performance success fees upon winning resolution.
               </p>
               <div className="fee-highlight">Performance-Aligned Structures</div>
-              <ul className="fee-features">
+              <ul className="fee-features fee-checklist">
                 <li>Substantially discounted monthly baseline fees</li>
                 <li>Pre-negotiated incentive bonus tied to trial victory or buyout value</li>
                 <li>Eliminates conflicting incentives between client and legal team</li>

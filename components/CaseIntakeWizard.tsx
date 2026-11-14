@@ -194,8 +194,10 @@ export default function CaseIntakeWizard() {
                         checked={category === item.val}
                         onChange={() => setCategory(item.val)}
                       />
-                      <div className="radio-card-title">{item.title}</div>
-                      <div className="radio-card-desc">{item.desc}</div>
+                      <div className="radio-card-content">
+                        <div className="radio-card-title">{item.title}</div>
+                        <div className="radio-card-desc">{item.desc}</div>
+                      </div>
                     </label>
                   ))}
                 </div>

@@ -156,12 +156,12 @@ export default function HomePage() {
                     value={heroFormMatter}
                     onChange={(e) => setHeroFormMatter(e.target.value)}
                   >
-                    <option value="aviation">Commercial Aviation Mass Casualty</option>
-                    <option value="trucking">Commercial Trucking Catastrophe</option>
-                    <option value="appellate">Federal or State Court Appeal</option>
-                    <option value="commercial">High-Stakes Commercial / Shareholder</option>
-                    <option value="whitecollar">White-Collar &amp; DOJ Investigation</option>
-                    <option value="maritime">Maritime &amp; Admiralty Wrongful Death</option>
+                    <option value="aviation">Commercial Aviation Disaster</option>
+                    <option value="trucking">Commercial Trucking Collision</option>
+                    <option value="appellate">Federal / State Court Appeal</option>
+                    <option value="commercial">Commercial Dispute &amp; Litigation</option>
+                    <option value="whitecollar">White-Collar &amp; DOJ Defense</option>
+                    <option value="maritime">Maritime &amp; Admiralty Claim</option>
                   </select>
                 </div>
 

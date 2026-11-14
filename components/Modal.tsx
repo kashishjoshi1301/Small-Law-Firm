@@ -41,7 +41,7 @@ export default function Modal({ isOpen, onClose, title, children }: ModalProps) 
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="modal-content" role="dialog" aria-modal="true">
+      <div className="modal-box modal-content" role="dialog" aria-modal="true">
         <div className="modal-header">
           <h3 className="modal-title">{title}</h3>
           <button

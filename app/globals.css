@@ -377,15 +377,18 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding-right: 6px;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .brand-block {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .brand-emblem {
@@ -404,6 +407,8 @@ h1, h2, h3, h4, h5 {
 .brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .brand-name {
@@ -413,14 +418,20 @@ h1, h2, h3, h4, h5 {
   color: #FFFFFF;
   letter-spacing: 0.04em;
   line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-subtitle {
   font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-links {
@@ -465,12 +476,15 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
+  margin-left: auto;
+  z-index: 10;
 }
 
 .nav-actions .btn {
   padding: 10px 18px;
   font-size: 0.86rem;
+  flex-shrink: 0;
 }
 
 .mobile-menu-toggle {
@@ -486,7 +500,7 @@ h1, h2, h3, h4, h5 {
   color: #FFFFFF;
   transition: var(--transition-fast);
   cursor: pointer;
-  flex-shrink: 0;
+  flex-shrink: 0 !important;
   box-sizing: border-box;
 }
 
@@ -1081,6 +1095,30 @@ select {
   flex-grow: 1;
 }
 
+.card-features {
+  list-style: none;
+  padding-left: 0;
+  margin: 18px 0 24px 0;
+}
+
+.card-features li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 0.89rem;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+
+.card-features li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--accent);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
 /* Visual Illustration Showcase Box */
 .showcase-illustration-box {
   position: relative;
@@ -1173,8 +1211,48 @@ select {
 }
 
 /* ==========================================================================
-   Practice Cards with Deep-Dive Details
+   Practice Cards & Filter System
    ========================================================================== */
+.practices-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+  align-items: center;
+}
+
+.practice-filter-btn,
+.filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.practice-filter-btn:hover,
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--primary);
+  background: #FFFFFF;
+}
+
+.practice-filter-btn.active,
+.filter-btn.active {
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(21, 59, 58, 0.2);
+}
+
 .practice-card {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
@@ -1638,9 +1716,12 @@ select {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 50px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.fee-model-card {
+.fee-model-card,
+.fee-card {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
@@ -1648,12 +1729,26 @@ select {
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.fee-model-card.featured {
+.fee-model-card.featured,
+.fee-card.featured {
   border: 2px solid var(--accent);
   box-shadow: var(--shadow-md);
   position: relative;
+}
+
+.fee-popular-pill,
+.fee-tier-badge {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 8px;
 }
 
 .fee-popular-pill {
@@ -1662,41 +1757,45 @@ select {
   right: 28px;
   background: var(--accent);
   color: var(--primary);
-  font-size: 0.72rem;
-  font-weight: 800;
   padding: 4px 12px;
   border-radius: var(--radius-full);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
-.fee-model-title {
+.fee-model-title,
+.fee-title {
   font-size: 1.35rem;
   margin-bottom: 8px;
+  color: var(--primary);
+  font-family: var(--font-serif);
 }
 
-.fee-model-price {
+.fee-model-price,
+.fee-highlight {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   color: var(--primary);
   font-weight: 700;
   margin-bottom: 14px;
 }
 
-.fee-model-desc {
+.fee-model-desc,
+.fee-desc {
   font-size: 0.92rem;
   color: var(--text-main);
   line-height: 1.62;
   margin-bottom: 22px;
 }
 
+.fee-features,
 .fee-checklist {
   list-style: none;
   margin-bottom: 24px;
   border-top: 1px solid var(--border-light);
   padding-top: 18px;
+  padding-left: 0;
 }
 
+.fee-features li,
 .fee-checklist li {
   display: flex;
   align-items: flex-start;
@@ -1704,8 +1803,10 @@ select {
   font-size: 0.88rem;
   color: var(--text-main);
   margin-bottom: 10px;
+  line-height: 1.5;
 }
 
+.fee-features li svg,
 .fee-checklist li svg {
   color: var(--accent);
   margin-top: 3px;
@@ -1713,6 +1814,7 @@ select {
 }
 
 /* Calculator Box */
+.calc-card,
 .fee-calculator-box {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
@@ -1721,6 +1823,8 @@ select {
   max-width: 900px;
   margin: 0 auto;
   box-shadow: var(--shadow-md);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .calc-grid {
@@ -1918,9 +2022,19 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
   margin-top: 36px;
   padding-top: 24px;
   border-top: 1px solid var(--border-light);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wizard-buttons .btn.hidden,
+.wizard-buttons .btn[style*="display: none"],
+#wizard-prev-btn.hidden {
+  display: none !important;
 }
 
 .radio-cards-grid {
@@ -1956,6 +2070,11 @@ select {
   flex-shrink: 0;
   width: 16px;
   height: 16px;
+}
+
+.radio-card-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .radio-card-title {
@@ -2581,8 +2700,10 @@ select {
   display: flex;
 }
 
-.modal-box {
-  background: var(--bg-card);
+.modal-box,
+.modal-content {
+  background: var(--bg-card) !important;
+  color: var(--text-main);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   max-width: 680px;
@@ -2591,6 +2712,7 @@ select {
   overflow-y: auto;
   box-shadow: 0 25px 60px rgba(0,0,0,0.35);
   animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
 }
 
 @keyframes modalPop {
@@ -2611,6 +2733,7 @@ select {
 .modal-title {
   color: #FFFFFF;
   font-size: 1.3rem;
+  margin: 0;
 }
 
 .modal-close-btn {
@@ -2618,6 +2741,9 @@ select {
   font-size: 1.6rem;
   line-height: 1;
   padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .modal-close-btn:hover {
@@ -2629,6 +2755,7 @@ select {
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--text-main);
+  background: var(--bg-card);
 }
 
 /* Toast */
@@ -2737,17 +2864,22 @@ select {
 /* Tablet & Mac Split-Screen (640px to 1080px) */
 @media (max-width: 1080px) {
   .nav-links, .nav-actions .btn {
-    display: none;
+    display: none !important;
   }
   .navbar .container {
-    padding-left: 24px;
-    padding-right: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .nav-actions {
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
   }
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    margin-right: 4px;
+    flex-shrink: 0 !important;
+    margin-right: 0 !important;
   }
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2895,28 +3027,49 @@ select {
   section, [id] {
     scroll-margin-top: 75px;
   }
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
   .navbar {
     padding: 8px 0;
   }
   .navbar .container {
-    padding-left: 20px;
-    padding-right: 28px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
   .nav-actions {
-    padding-right: 4px;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+    padding-right: 0 !important;
   }
   .mobile-menu-toggle {
-    margin-right: 4px;
+    display: flex !important;
+    flex-shrink: 0 !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin-right: 0 !important;
+  }
+  .brand-block {
+    gap: 8px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
   }
   .brand-emblem {
-    width: 38px;
-    height: 38px;
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
   }
   .brand-name {
-    font-size: 1.05rem;
+    font-size: 0.98rem !important;
+    letter-spacing: 0.02em !important;
   }
   .brand-subtitle {
-    font-size: 0.62rem;
+    font-size: 0.58rem !important;
+    letter-spacing: 0.05em !important;
   }
   .hero-title {
     font-size: 2.3rem;
@@ -2952,27 +3105,119 @@ select {
   .calc-grid,
   .radio-cards-grid {
     grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .radio-card,
+  .radio-card-label {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    padding: 14px 16px !important;
+  }
+  .wizard-container {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   .wizard-sidebar {
-    padding: 24px 18px;
+    padding: 24px 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .wizard-sidebar-desc {
+    word-break: break-word !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
   }
   .wizard-steps-nav {
-    flex-direction: row;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 8px;
-    padding-bottom: 8px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 8px !important;
+    padding-bottom: 8px !important;
   }
   .wizard-steps-nav .step-indicator {
-    padding: 8px 12px;
-    white-space: nowrap;
-    flex-shrink: 0;
+    padding: 8px 12px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
   .wizard-steps-nav .step-sub {
     display: none;
   }
   .wizard-form-col {
-    padding: 24px 18px;
+    padding: 24px 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+  .referral-notice-box {
+    padding: 24px 20px !important;
+    margin-top: 32px !important;
+    border-left: 4px solid var(--accent) !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .referral-notice-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .fee-model-card,
+  .fee-card {
+    padding: 28px 22px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .calc-card,
+  .fee-calculator-box {
+    padding: 24px 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .practices-filter-bar {
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+  }
+  .practice-filter-btn,
+  .filter-btn {
+    padding: 8px 14px !important;
+    font-size: 0.82rem !important;
+  }
+  .feature-card,
+  .practice-card {
+    padding: 30px 24px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  .card-features {
+    padding-left: 0 !important;
+    margin: 16px 0 20px 0 !important;
+  }
+  .card-features li {
+    padding-left: 18px !important;
+    margin-bottom: 8px !important;
+    font-size: 0.86rem !important;
+  }
+  .form-select,
+  select {
+    font-size: 0.88rem !important;
+    padding: 12px 36px 12px 14px !important;
+    background-position: right 12px center !important;
+    background-size: 14px !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .top-bar-inner {
     justify-content: center;
@@ -3200,31 +3445,93 @@ select {
 /* Mobile Phones (< 640px) */
 @media (max-width: 640px) {
   .container {
-    padding: 0 18px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
   .navbar .container {
-    padding-left: 18px;
-    padding-right: 28px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
   .nav-actions {
-    padding-right: 4px;
+    padding-right: 0 !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
   }
   .mobile-menu-toggle {
-    width: 44px;
-    height: 44px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 4px;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
     border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.22);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
   .mobile-menu-toggle svg {
-    width: 22px;
-    height: 22px;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .brand-block {
+    gap: 8px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  .brand-emblem {
+    width: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0 !important;
+  }
+  .brand-name {
+    font-size: 0.92rem !important;
+    letter-spacing: 0.02em !important;
+  }
+  .brand-subtitle {
+    font-size: 0.54rem !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  /* Wizard Buttons Responsive Stack - Zero Horizontal Collision */
+  .wizard-buttons {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    margin-top: 28px !important;
+    padding-top: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .wizard-buttons .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 13px 20px !important;
+    font-size: 0.95rem !important;
+    display: flex !important;
+  }
+  .wizard-buttons .btn.hidden,
+  .wizard-buttons .btn[style*="display: none"],
+  #wizard-prev-btn.hidden {
+    display: none !important;
+  }
+
+  /* Toast Notification */
+  .toast-msg {
+    bottom: 16px !important;
+    left: 16px !important;
+    right: 16px !important;
+    max-width: calc(100% - 32px) !important;
+    text-align: center !important;
+    font-size: 0.85rem !important;
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
   }
   .section-padding {
     padding: 44px 0;
@@ -3367,28 +3674,43 @@ select {
 
 /* Extra Compact Phones (< 440px) */
 @media (max-width: 440px) {
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
   .navbar .container {
-    padding-left: 14px;
-    padding-right: 24px;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
   .nav-actions {
-    padding-right: 4px;
+    padding-right: 0 !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
   }
   .mobile-menu-toggle {
-    margin-right: 2px;
+    margin-right: 0 !important;
+    width: 38px !important;
+    height: 38px !important;
+    padding: 7px !important;
+    display: flex !important;
+    flex-shrink: 0 !important;
   }
   .brand-name {
-    font-size: 0.88rem;
-    letter-spacing: 0.02em;
+    font-size: 0.84rem !important;
+    letter-spacing: 0.01em !important;
   }
   .brand-subtitle {
-    font-size: 0.52rem;
+    font-size: 0.48rem !important;
+    letter-spacing: 0.03em !important;
   }
   .brand-block {
-    gap: 8px;
+    gap: 6px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
   }
   .brand-emblem {
-    width: 32px;
-    height: 32px;
+    width: 30px !important;
+    height: 30px !important;
+    flex-shrink: 0 !important;
   }
 }
