@@ -206,6 +206,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Showcase Box with High-End Illustration */}
+      <section className="section-padding" style={{ paddingBottom: '20px' }}>
+        <div className="container">
+          <div className="section-header">
+            <span className="section-badge">Courtroom Authority</span>
+            <h2 className="section-title">Built for the Most Demanding Legal Battles</h2>
+            <p className="section-desc">
+              From federal multi-district litigation to oral arguments at the U.S. Supreme Court, Atlantic Trial Attorneys brings relentless preparation, financial war-chest capital, and seasoned trial advocacy.
+            </p>
+          </div>
+
+          <div className="showcase-illustration-box">
+            <img src="/images/courtroom-hero.jpg" alt="United States Federal District Courtroom &amp; Judicial Bench" className="showcase-img" />
+            <div className="showcase-overlay-bar">
+              <span className="showcase-overlay-text">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                Federal Courtroom &amp; Supreme Court Practice Docket • Admitted Nationwide
+              </span>
+              <span className="showcase-overlay-tag">Federal Trial Authority</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Headline Landmark Verdicts Showcase ($680M+ Track Record) */}
       <section className="section-padding">
         <div className="container">

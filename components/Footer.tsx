@@ -120,8 +120,8 @@ export default function Footer() {
               &copy; 2026 Atlantic Trial Attorneys LLP. Designed strictly under Brand Standards.
             </div>
             <div className="footer-legal-links">
-              <Link href="/fees">Privacy Policy</Link>
-              <Link href="/fees">Terms of Representation</Link>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Representation</Link>
               <Link href="/contact">Client Portal Access</Link>
             </div>
           </div>
