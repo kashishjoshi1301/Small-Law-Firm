@@ -378,6 +378,7 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  padding-right: 6px;
 }
 
 .brand-block {
@@ -2738,10 +2739,15 @@ select {
   .nav-links, .nav-actions .btn {
     display: none;
   }
+  .navbar .container {
+    padding-left: 24px;
+    padding-right: 28px;
+  }
   .mobile-menu-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 4px;
   }
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2891,6 +2897,16 @@ select {
   }
   .navbar {
     padding: 8px 0;
+  }
+  .navbar .container {
+    padding-left: 20px;
+    padding-right: 28px;
+  }
+  .nav-actions {
+    padding-right: 4px;
+  }
+  .mobile-menu-toggle {
+    margin-right: 4px;
   }
   .brand-emblem {
     width: 38px;
@@ -3186,6 +3202,13 @@ select {
   .container {
     padding: 0 18px;
   }
+  .navbar .container {
+    padding-left: 18px;
+    padding-right: 28px;
+  }
+  .nav-actions {
+    padding-right: 4px;
+  }
   .mobile-menu-toggle {
     width: 44px;
     height: 44px;
@@ -3193,6 +3216,7 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 4px;
     border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.22);
@@ -3338,5 +3362,33 @@ select {
   .referral-notice-box {
     padding: 22px 18px;
     margin-top: 36px;
+  }
+}
+
+/* Extra Compact Phones (< 440px) */
+@media (max-width: 440px) {
+  .navbar .container {
+    padding-left: 14px;
+    padding-right: 24px;
+  }
+  .nav-actions {
+    padding-right: 4px;
+  }
+  .mobile-menu-toggle {
+    margin-right: 2px;
+  }
+  .brand-name {
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+  }
+  .brand-subtitle {
+    font-size: 0.52rem;
+  }
+  .brand-block {
+    gap: 8px;
+  }
+  .brand-emblem {
+    width: 32px;
+    height: 32px;
   }
 }
