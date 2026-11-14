@@ -143,6 +143,35 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 14px;
 }
 
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  text-align: center;
+  max-width: 100%;
+  margin-bottom: 22px;
+  line-height: 1.4;
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 16px;
+}
+
+.hero-badge .badge-star {
+  color: var(--accent);
+  font-size: 0.88rem;
+}
+
+.hero-badge .badge-txt-part {
+  white-space: nowrap;
+}
+
+.hero-badge .badge-dot-sep {
+  opacity: 0.6;
+}
+
 .section-header {
   text-align: center;
   max-width: 760px;
@@ -176,7 +205,25 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   position: relative;
   overflow: hidden;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  word-break: normal;
+  line-height: 1.35;
+  box-sizing: border-box;
+}
+
+.section-cta-wrap {
+  text-align: center;
+  margin-top: 36px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-cta-wrap .btn {
+  max-width: 100%;
 }
 
 .btn-primary {
@@ -605,20 +652,33 @@ body.menu-open {
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
   background: rgba(189, 150, 126, 0.14);
   border: 1px solid rgba(189, 150, 126, 0.35);
   color: var(--accent);
-  padding: 6px 16px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   margin-bottom: 22px;
+  max-width: 100%;
+  line-height: 1.35;
 }
 
 .hero-pill svg {
   color: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-pill-part {
+  white-space: nowrap;
+}
+
+.hero-pill-dot {
+  opacity: 0.6;
 }
 
 .hero-title {
@@ -1115,6 +1175,56 @@ body.menu-open {
   padding-top: 14px;
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+/* Referral Notice Box */
+.referral-notice-box {
+  margin-top: 48px;
+  background: var(--bg-card);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.referral-notice-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.referral-notice-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(189, 150, 126, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.referral-notice-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.referral-notice-title {
+  font-size: 1.35rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.referral-notice-text {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 
 /* ==========================================================================
@@ -2414,44 +2524,179 @@ body.menu-open {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .mobile-table-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(189, 150, 126, 0.15);
-    border: 1px solid rgba(189, 150, 126, 0.45);
-    color: var(--primary);
-    padding: 5px 12px;
-    border-radius: var(--radius-full);
-    font-size: 0.74rem;
-    font-weight: 700;
+  .section-padding {
+    padding: 56px 0;
+  }
+  .section-header {
+    margin: 0 auto 32px;
+  }
+  .section-title {
+    font-size: 2rem;
+    line-height: 1.25;
     margin-bottom: 12px;
   }
+  .section-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  /* Comparison Matrix Responsive Mobile Cards (< 768px) */
+  .mobile-table-hint {
+    display: none !important;
+  }
   .matrix-scroll-wrapper {
-    margin-top: 16px;
+    margin-top: 20px;
     width: 100%;
     max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
+    border: none;
+    box-shadow: none;
+    background: transparent;
   }
-  .matrix-header,
+  .comparison-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    max-width: 100%;
+  }
+  .matrix-header {
+    display: none !important;
+  }
   .matrix-row {
-    min-width: 560px;
-  }
-  .matrix-header-cell {
-    padding: 14px 14px;
-    font-size: 0.88rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0 !important;
+    width: 100%;
+    max-width: 100%;
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    padding: 20px 18px;
+    gap: 12px;
+    box-sizing: border-box;
   }
   .matrix-cell {
-    padding: 12px 14px;
-    font-size: 0.82rem;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+  .matrix-cell.feature-name {
+    order: 1;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    color: var(--primary);
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid var(--border-light) !important;
+    line-height: 1.35;
+  }
+  .matrix-cell.featured {
+    order: 2;
+    background: rgba(21, 59, 58, 0.06) !important;
+    border: 1.5px solid rgba(21, 59, 58, 0.22) !important;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px !important;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+  .matrix-cell.featured::before {
+    content: "Atlantic Trial Attorneys";
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--secondary);
+    margin-bottom: 6px;
+    font-family: var(--font-sans);
+  }
+  .matrix-cell.featured svg {
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-right: 6px;
+    color: var(--secondary);
+  }
+  .matrix-cell.standard {
+    order: 3;
+    background: #F8F7F4 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px !important;
+    color: #667270;
+    font-size: 0.84rem;
+    line-height: 1.4;
+  }
+  .matrix-cell.standard::before {
+    content: "Mega-Firm / Settlement Mills";
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8C9996;
+    margin-bottom: 6px;
+    font-family: var(--font-sans);
   }
 }
 
 /* Mobile Phones (< 640px) */
 @media (max-width: 640px) {
+  .container {
+    padding: 0 18px;
+  }
+  .section-padding {
+    padding: 44px 0;
+  }
+  .section-header {
+    margin: 0 auto 24px;
+  }
+  .section-title {
+    font-size: 1.7rem;
+    line-height: 1.25;
+  }
+  .section-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
   .hero-title {
     font-size: 2.15rem;
+    line-height: 1.2;
+  }
+  .hero-badge {
+    font-size: 0.74rem;
+    padding: 6px 12px;
+    gap: 6px;
+    line-height: 1.35;
+  }
+  .hero-cta-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .hero-cta-row .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 13px 20px;
+    font-size: 0.92rem;
+  }
+  .hero-trust-bar {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding-top: 18px;
   }
   .cards-grid-3,
   .cards-grid-2,
@@ -2463,6 +2708,32 @@ body.menu-open {
   .protocol-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .feature-card {
+    padding: 24px 20px;
+  }
+  .attorney-portrait-wrap,
+  .attorney-portrait-wrapper {
+    height: 260px;
+  }
+  .attorney-card-body,
+  .attorney-body {
+    padding: 20px 18px 22px 18px;
+  }
+  .attorney-meta-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  .meta-val {
+    text-align: left;
+    font-size: 0.82rem;
+  }
+  .meta-label {
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
   }
   .credibility-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2484,5 +2755,19 @@ body.menu-open {
   }
   .footer-bottom-row a {
     margin: 0 10px;
+  }
+  .section-cta-wrap {
+    margin-top: 24px;
+    padding: 0 10px;
+  }
+  .section-cta-wrap .btn {
+    width: 100%;
+    max-width: 380px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+  }
+  .referral-notice-box {
+    padding: 22px 18px;
+    margin-top: 36px;
   }
 }
